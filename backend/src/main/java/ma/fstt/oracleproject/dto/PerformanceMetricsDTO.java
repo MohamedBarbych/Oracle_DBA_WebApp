@@ -10,5 +10,6 @@ public class PerformanceMetricsDTO {
     private Double cpuUsage;
     private Double memoryUsage;
     private Double diskIO;
+    //--- Date de collecte ----
     private LocalDateTime collectedAt; // Date de collecte
 }
