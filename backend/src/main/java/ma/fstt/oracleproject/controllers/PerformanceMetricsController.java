@@ -1,8 +1,8 @@
 package ma.fstt.oracleproject.controllers;
 
-import lombok.RequiredArgsConstructor;
 import ma.fstt.oracleproject.dto.PerformanceMetricsDTO;
 import ma.fstt.oracleproject.services.PerformanceMetricsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,10 +10,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/metrics")
-@RequiredArgsConstructor
 public class PerformanceMetricsController {
 
-    private final PerformanceMetricsService metricsService;
+    @Autowired
+    private PerformanceMetricsService metricsService;
 
     @GetMapping
     public ResponseEntity<List<PerformanceMetricsDTO>> getAllMetrics() {
@@ -35,7 +35,7 @@ public class PerformanceMetricsController {
 
     @PutMapping("/{id}")
     public ResponseEntity<PerformanceMetricsDTO> updateMetrics(@PathVariable Long id, @RequestBody PerformanceMetricsDTO metricsDTO) {
-        metricsDTO.setId(id); // Assigner l'ID
+        metricsDTO.setId(id); // Assign ID
         PerformanceMetricsDTO updatedMetrics = metricsService.save(metricsDTO);
         return ResponseEntity.ok(updatedMetrics);
     }

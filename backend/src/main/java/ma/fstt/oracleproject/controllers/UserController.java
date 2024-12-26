@@ -1,8 +1,8 @@
 package ma.fstt.oracleproject.controllers;
 
-import lombok.RequiredArgsConstructor;
 import ma.fstt.oracleproject.dto.UserDTO;
 import ma.fstt.oracleproject.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,10 +10,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
-@RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping
     public ResponseEntity<List<UserDTO>> getAllUsers() {
@@ -41,7 +41,7 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<UserDTO> updateUser(@PathVariable Long id, @RequestBody UserDTO userDTO) {
-        userDTO.setId(id); // Assigner l'ID
+        userDTO.setId(id); // Assign ID
         UserDTO updatedUser = userService.save(userDTO);
         return ResponseEntity.ok(updatedUser);
     }

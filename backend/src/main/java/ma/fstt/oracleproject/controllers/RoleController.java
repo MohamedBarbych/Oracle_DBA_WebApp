@@ -1,8 +1,8 @@
 package ma.fstt.oracleproject.controllers;
 
-import lombok.RequiredArgsConstructor;
 import ma.fstt.oracleproject.dto.RoleDTO;
 import ma.fstt.oracleproject.services.RoleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,10 +10,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/roles")
-@RequiredArgsConstructor
 public class RoleController {
 
-    private final RoleService roleService;
+    @Autowired
+    private RoleService roleService;
 
     @GetMapping
     public ResponseEntity<List<RoleDTO>> getAllRoles() {
@@ -41,7 +41,7 @@ public class RoleController {
 
     @PutMapping("/{id}")
     public ResponseEntity<RoleDTO> updateRole(@PathVariable Long id, @RequestBody RoleDTO roleDTO) {
-        roleDTO.setId(id); // Assigner l'ID
+        roleDTO.setId(id); // Assign ID
         RoleDTO updatedRole = roleService.save(roleDTO);
         return ResponseEntity.ok(updatedRole);
     }
