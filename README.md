@@ -77,3 +77,33 @@ Technique : Cette entité est essentielle pour la gestion des permissions et des
 
 Capture les données de performance du système, telles que l'utilisation du CPU, de la mémoire, et des entrées/sorties disque à des moments spécifiques.
 Technique : Utile pour le suivi des performances et l'analyse des données historiques.
+
+
+
+## Structure du Projet
+
+### **Couche Entités (JPA)**  
+Les entités JPA modélisent les tables de la base de données et gèrent les relations entre les données via des annotations.  
+Elles servent à persister, lire et modifier les données directement dans la base.
+
+### **Couche DTO (Data Transfer Object)**  
+Les DTOs sont des objets légers utilisés pour transporter des données entre les couches de l'application ou vers des systèmes externes.  
+Ils permettent de sécuriser et d’optimiser les transferts en exposant uniquement les informations nécessaires.
+
+### **Couche Services**  
+La couche service contient la logique métier et gère les interactions entre les données et les contrôleurs.  
+Elle utilise les entités pour accéder à la base et les DTOs pour formater les données en sortie.
+
+### **Couche Contrôleurs (API)**  
+Les contrôleurs exposent les points d'accès RESTful pour les clients (frontend ou API).  
+Ils reçoivent les requêtes, délèguent la logique à la couche service, et renvoient des réponses formatées à l'aide des DTOs.
+
+---
+
+## Technologies Utilisées  
+- **Backend** : Java EE (Spring Boot)  
+- **ORM** : Hibernate  
+- **Base de Données** : Oracle Database  
+- **Frontend** : Angular ou React  
+- **Sécurité** : JAAS  
+- **API REST** : Spring Web  
