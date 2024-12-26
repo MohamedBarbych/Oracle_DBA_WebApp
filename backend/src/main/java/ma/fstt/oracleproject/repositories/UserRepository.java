@@ -1,6 +1,6 @@
 package ma.fstt.oracleproject.repositories;
 
-import ma.fstt.oracleproject.Entities.User;
+import ma.fstt.oracleproject.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

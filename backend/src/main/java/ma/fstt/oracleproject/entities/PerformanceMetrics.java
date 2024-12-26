@@ -1,4 +1,4 @@
-package ma.fstt.oracleproject.Entities;
+package ma.fstt.oracleproject.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;

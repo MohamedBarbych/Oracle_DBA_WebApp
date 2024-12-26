@@ -1,10 +1,9 @@
 package ma.fstt.oracleproject.repositories;
 
-import ma.fstt.oracleproject.Entities.PerformanceMetrics;
+import ma.fstt.oracleproject.entities.PerformanceMetrics;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
