@@ -68,11 +68,12 @@ $ mvn spring-boot:run
 
 Représente un utilisateur du système, avec des informations comme le nom d'utilisateur, le mot de passe, les rôles attribués, et d'autres métadonnées comme la politique de mot de passe et le quota d'espace.
 Technique : C'est une entité principale pour la gestion des utilisateurs et des relations avec d'autres entités comme les rôles, les sauvegardes, et les audits.
-Role :
+- **Role**
 
 Définit les rôles utilisateurs, comme "Admin", "User", ou "Viewer". Chaque rôle peut être attribué à plusieurs utilisateurs, établissant une relation many-to-many.
 Technique : Cette entité est essentielle pour la gestion des permissions et des droits d'accès.
-PerformanceMetrics :
+
+- **PerformanceMetrics**
 
 Capture les données de performance du système, telles que l'utilisation du CPU, de la mémoire, et des entrées/sorties disque à des moments spécifiques.
 Technique : Utile pour le suivi des performances et l'analyse des données historiques.
