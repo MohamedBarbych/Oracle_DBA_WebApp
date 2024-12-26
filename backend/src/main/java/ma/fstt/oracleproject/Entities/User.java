@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -20,13 +21,23 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER) // Eager fetch type is used to load all the roles at the same time as the user
+    // Eager fetch type is used to load all the roles at the same time as the user
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private List<Role> roles;
+    private Set<Role> roles;
+
+    @OneToMany(mappedBy = "triggeredBy")
+    private List<Backup> backups;
+
+    @OneToMany(mappedBy = "performedBy")
+    private List<Audit> audits;
+
+    @OneToMany(mappedBy = "user")
+    private List<PerformanceMetrics> performanceMetrics;
 
     @Column(name = "quota_space",nullable = true)
     private Long quotaSpace;

@@ -3,6 +3,8 @@ package ma.fstt.oracleproject.Entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "roles")
@@ -13,4 +15,7 @@ public class Role {
 
     @Column(nullable = false, unique = true)
     private String name;
+
+    @ManyToMany(mappedBy = "roles")
+    private List<User> users;
 }

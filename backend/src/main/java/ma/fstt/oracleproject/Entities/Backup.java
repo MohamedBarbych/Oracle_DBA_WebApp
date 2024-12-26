@@ -27,4 +27,8 @@ public class Backup {
 
     @Column(name = "auto_schedule", nullable = true)
     private Boolean autoSchedule;
+
+    @ManyToOne
+    private DataGuard dataguard;
+
 }
