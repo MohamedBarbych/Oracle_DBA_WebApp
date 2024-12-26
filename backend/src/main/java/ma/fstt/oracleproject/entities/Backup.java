@@ -29,6 +29,7 @@ public class Backup {
     private Boolean autoSchedule;
 
     @ManyToOne
+    @JoinColumn(name = "id")
     private DataGuard dataguard;
 
 }
