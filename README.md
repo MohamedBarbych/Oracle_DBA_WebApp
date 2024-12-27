@@ -104,6 +104,6 @@ Ils reçoivent les requêtes, délèguent la logique à la couche service, et re
 - **Backend** : Java EE (Spring Boot)  
 - **ORM** : Hibernate  
 - **Base de Données** : Oracle Database  
-- **Frontend** : Angular ou React  
+- **Frontend** : Angular 
 - **Sécurité** : JAAS  
 - **API REST** : Spring Web  
