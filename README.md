@@ -30,7 +30,7 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
 ## 🛠️ **Technologies Utilisées**
 
 ### **Frontend**
-- **Framework** : Angular 16
+- **Framework** : Angular 19
 - **Langages** : TypeScript, HTML5, SCSS
 - **Outils** :
   - RxJS pour la gestion des données réactives.
