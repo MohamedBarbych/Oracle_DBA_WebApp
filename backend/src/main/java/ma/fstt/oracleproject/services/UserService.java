@@ -1,6 +1,7 @@
 package ma.fstt.oracleproject.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,21 +38,48 @@ public class UserService {
         }
     }
 
-    // Méthode pour mettre à jour un utilisateur
     @Transactional
     public void updateUser(String username, String newPassword, String newRoles) {
-        try {
-            // Mise à jour du mot de passe
-            String updatePasswordSQL = "ALTER USER " + username + " IDENTIFIED BY '" + newPassword + "'";
-            jdbcTemplate.execute(updatePasswordSQL);
+        username = username.trim();
+        newPassword = newPassword.trim();
 
-            // Mise à jour des rôles si spécifiés
-            if (newRoles != null && !newRoles.isEmpty()) {
-                String grantRolesSQL = "GRANT " + newRoles + " TO " + username;
-                jdbcTemplate.execute(grantRolesSQL);
+        try {
+            // Validation des paramètres
+            if (username == null || username.isEmpty()) {
+                throw new IllegalArgumentException("Le nom d'utilisateur est obligatoire.");
             }
 
-            System.out.println("Utilisateur mis à jour avec succès : " + username);
+            // Vérifier si l'utilisateur existe
+            String checkUserSQL = "SELECT COUNT(*) FROM dba_users WHERE username = ?";
+            Integer userCount = jdbcTemplate.queryForObject(checkUserSQL, new Object[]{username.toUpperCase()}, Integer.class);
+
+            if (userCount == null || userCount == 0) {
+                throw new IllegalArgumentException("L'utilisateur spécifié n'existe pas : " + username);
+            }
+
+            // Modifier le mot de passe
+            if (newPassword != null && !newPassword.isEmpty()) {
+                // Utiliser directement le mot de passe dans la requête
+                String updatePasswordSQL = "ALTER USER " + username + " IDENTIFIED BY " + newPassword ;
+
+                // Exécuter la requête pour changer le mot de passe
+                jdbcTemplate.execute(updatePasswordSQL);
+            }
+
+            // Ajouter de nouveaux rôles si spécifiés
+            if (newRoles != null && !newRoles.isEmpty()) {
+                String[] roles = newRoles.split(",");
+                for (String role : roles) {
+                    // Ajouter un rôle
+                    String grantRoleSQL = "GRANT " + role.trim() + " TO " + username;
+                    jdbcTemplate.execute(grantRoleSQL);
+                }
+            }
+
+            System.out.println("Mise à jour effectuée pour l'utilisateur : " + username);
+
+        } catch (DataAccessException e) {
+            throw new RuntimeException("Erreur SQL : " + e.getMessage(), e);
         } catch (Exception e) {
             throw new RuntimeException("Erreur lors de la mise à jour de l'utilisateur : " + e.getMessage(), e);
         }
@@ -60,6 +88,7 @@ public class UserService {
     // Méthode pour supprimer un utilisateur
     @Transactional
     public void deleteUser(String username) {
+        username = username.trim();
         try {
             // Commande pour supprimer l'utilisateur
             String deleteUserSQL = "DROP USER " + username + " CASCADE";
@@ -73,9 +102,10 @@ public class UserService {
 
     // Méthode pour vérifier si un utilisateur existe
     public boolean getUser(String username) {
+        username = username.trim();
         try {
-            // Vérification dans DBA_USERS
-            String checkUserSQL = "SELECT COUNT(*) FROM DBA_USERS WHERE USERNAME = ?";
+            // Vérification dans dba_users
+            String checkUserSQL = "SELECT COUNT(*) FROM dba_users WHERE USERNAME = ?";
             Integer count = jdbcTemplate.queryForObject(checkUserSQL, new Object[]{username.toUpperCase()}, Integer.class);
 
             return count != null && count > 0;
