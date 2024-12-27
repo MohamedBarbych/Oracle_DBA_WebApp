@@ -25,7 +25,7 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
   - Surveillance des performances des requêtes SQL.
   - Conseils pour optimiser les temps de réponse des bases de données.
 
----
+---  
 
 ## 🛠️ **Technologies Utilisées**
 
@@ -64,7 +64,7 @@ $ mvn spring-boot:run
 ```
 
 ## **Rôle de chaque entité**
-- **User**
+- **User** 
 
 Représente un utilisateur du système, avec des informations comme le nom d'utilisateur, le mot de passe, les rôles attribués, et d'autres métadonnées comme la politique de mot de passe et le quota d'espace.
 Technique : C'est une entité principale pour la gestion des utilisateurs et des relations avec d'autres entités comme les rôles, les sauvegardes, et les audits.
@@ -88,7 +88,7 @@ Elles servent à persister, lire et modifier les données directement dans la ba
 
 ### **Couche DTO (Data Transfer Object)**  
 Les DTOs sont des objets légers utilisés pour transporter des données entre les couches de l'application ou vers des systèmes externes.  
-Ils permettent de sécuriser et d’optimiser les transferts en exposant uniquement les informations nécessaires.
+Ils permettent de sécuriser et d’optimiser les transferts en exposant uniquement les informations nécessaires .
 
 ### **Couche Services**  
 La couche service contient la logique métier et gère les interactions entre les données et les contrôleurs.  
