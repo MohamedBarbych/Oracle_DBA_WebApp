@@ -81,6 +81,13 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- HikariCP (connection pool for database) -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>5.0.1</version> <!-- or latest version -->
+        </dependency>
+
         <!-- Lombok (optional, for cleaner code) -->
         <dependency>
             <groupId>org.projectlombok</groupId>
