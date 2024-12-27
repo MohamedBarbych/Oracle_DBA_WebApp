@@ -88,7 +88,7 @@ Elles servent à persister, lire et modifier les données directement dans la ba
 
 ### **Couche DTO (Data Transfer Object)**  
 Les DTOs sont des objets légers utilisés pour transporter des données entre les couches de l'application ou vers des systèmes externes.  
-Ils permettent de sécuriser et d’optimiser les transferts en exposant uniquement les informations nécessaires .
+Ils permettent de sécuriser et d’optimiser les transferts en exposant uniquement les informations nécessaires.
 
 ### **Couche Services**  
 La couche service contient la logique métier et gère les interactions entre les données et les contrôleurs.  
@@ -99,7 +99,7 @@ Les contrôleurs exposent les points d'accès RESTful pour les clients (frontend
 Ils reçoivent les requêtes, délèguent la logique à la couche service, et renvoient des réponses formatées à l'aide des DTOs.
 
 ---
-
+  
 ## Technologies Utilisées  
 - **Backend** : Java EE (Spring Boot)  
 - **ORM** : Hibernate  
