@@ -1,0 +1,54 @@
+/* Dashboard Styling */
+.card {
+  border: none;
+  border-radius: 10px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.card-text {
+  font-weight: bold;
+}
+
+
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #0056b3, #003580);
+}
+
+/* Chart.js Canvas Styling */
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/* Increase the size of the light gray container */
+.container-xxl {
+  background-color: #f8f9fa;
+  padding: 50px 20px; /* Increased padding for more free space */
+}
+
+/* Chart Heights */
+#portfolioChart {
+  height: 400px; /* Increased height for better readability */
+}
+
+/* Ensure equal widths for charts */
+.card-body canvas {
+  width: 100% !important; /* Ensure charts fill the container width */
+}

@@ -1,0 +1,207 @@
+/* Existing Navbar Logos */
+.navbar-brand img.owl-logo {
+  height: 90px;
+  width: 100px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.navbar-brand img.owl-logo2 {
+  height: 30px;
+  width: 50px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* Buttons */
+.navbar .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .btn-outline-primary {
+  color: #007bff;
+  border: 1px solid #007bff;
+  background-color: transparent;
+}
+
+.navbar .btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.navbar .btn-primary {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: #ffffff;
+  border: none;
+}
+
+.navbar .btn-primary:hover {
+  background: linear-gradient(45deg, #0056b3, #003580);
+}
+
+  /* Social Media Icons */
+  .navbar .btn-light {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 50%; /* Keep the circular shape */
+  }
+
+
+.navbar .btn-light:hover {
+  background-color: #e9ecef;
+}
+
+
+/* Responsive Styling */
+@media (max-width: 991px) {
+  /* Navbar */
+  .navbar {
+    padding: 1rem;
+  }
+
+    /* Social Media Icons - Adjust for Mobile */
+    .navbar .btn-light {
+      width: 40px; /* Slightly larger for better tapability */
+      height: 40px; /* Match width for perfect circle */
+      margin: 0.4rem auto; /* Add vertical spacing between icons */
+      padding: 0.2rem; /* Adjust padding for better centering */
+    }
+
+    .navbar .btn-light small {
+      font-size: 1.1rem; /* Adjust icon font size for visibility */
+
+
+  .navbar .navbar-collapse {
+    text-align: center; /* Center-align collapsed items */
+  }
+
+  /* Login and Register Buttons - Mobile Adjustment */
+  .navbar .btn-outline-primary,
+  .navbar .btn-primary {
+    width: 100%; /* Make buttons take full width on smaller screens */
+    margin-bottom: 0.5rem; /* Add spacing between buttons */
+  }
+
+  /* Reduce font size for buttons to fit better on mobile */
+  .navbar .btn-outline-primary,
+  .navbar .btn-primary {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+
+  /* Adjust logo size for smaller screens */
+  .navbar-brand img.owl-logo {
+    height: 70px;
+    width: 80px;
+  }
+
+  .navbar-brand img.owl-logo2 {
+    height: 25px;
+    width: 40px;
+
+  }
+}
+}
+
+
+
+/* Team Section Styling */
+.team-item {
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.team-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Member Image */
+.team-item img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+}
+
+/* Team Member Text */
+.team-text h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.team-text span {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Social Media Icons */
+.team-social .btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+.team-social .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .team-item {
+    margin-bottom: 20px; /* Add spacing between items on smaller screens */
+  }
+
+  .team-text h4 {
+    font-size: 1.15rem; /* Adjust heading size for smaller screens */
+  }
+
+  .team-text span {
+    font-size: 0.85rem;
+  }
+
+  .team-social .btn {
+    width: 32px;
+    height: 32px; /* Adjust button size for smaller devices */
+  }
+}
+
+@media (max-width: 576px) {
+  .team-item {
+    text-align: center; /* Center-align content on very small screens */
+  }
+
+  .team-text h4 {
+    font-size: 1rem; /* Further reduce text size */
+  }
+
+  .team-text span {
+    font-size: 0.8rem;
+  }
+
+  .team-social .btn {
+    width: 30px;
+    height: 30px;
+    margin: 0.2rem; /* Add spacing between buttons */
+  }
+}
+
+
+
+

@@ -1,0 +1,158 @@
+<!-- User Dashboard -->
+<div class="container-xxl py-5 bg-light">
+  <!-- Page Header -->
+  <div class="container mb-4">
+    <div class="d-flex align-items-center justify-content-between">
+      <h1 class="text-primary">User Dashboard</h1>
+      <div>
+        <!-- Profile Button -->
+        <a href="/user-profile">
+          <button class="btn btn-primary me-3">
+            <i class="fas fa-user-circle me-2"></i> Profile
+          </button>
+        </a>
+
+        <!-- Logout Button -->
+        <a href="/">
+          <button class="btn btn-danger">
+            <i class="fas fa-sign-out-alt me-2"></i> Logout
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard Content -->
+  <div class="container">
+    <!-- Summary Cards -->
+    <div class="row g-4 mb-5">
+      <div class="col-lg-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Portfolio Balance</h5>
+            <p class="card-text display-6 text-primary">$10,230</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Monthly Contributions</h5>
+            <p class="card-text display-6 text-primary">$500</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Performance</h5>
+            <p class="card-text display-6 text-success">+15%</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Investments</h5>
+            <p class="card-text display-6 text-primary">12</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Charts Section -->
+<div class="row g-4 d-flex align-items-center">
+  <!-- Portfolio Allocation Chart -->
+  <div class="col-lg-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Portfolio Allocation</h5>
+        <canvas id="portfolioChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Performance Trends Chart -->
+  <div class="col-lg-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title text-primary">Performance Trends</h5>
+        <canvas id="performanceTrendsChart"></canvas>
+        <p class="text-muted text-center mt-3">
+          Track your portfolio growth and investment performance over time.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- AI Investment Spinner -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Investment Suggestions</h5>
+            <p class="text-muted">Discover the best investment opportunities tailored to you.</p>
+            <button class="btn btn-primary w-100 py-3">
+              <i class="fas fa-sync-alt me-2"></i> Get AI Suggestions
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Recent Activity</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <i class="fas fa-arrow-up text-success me-2"></i>Deposited $500 on <strong>28 Dec 2024</strong>
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-shopping-cart text-primary me-2"></i>Bought 10 shares of Tesla on <strong>25 Dec 2024</strong>
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-dollar-sign text-warning me-2"></i>Received $100 dividend on <strong>20 Dec 2024</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Financial Education -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Financial Education</h5>
+            <p class="text-muted">Explore our educational resources to enhance your financial literacy.</p>
+            <div class="d-grid gap-3">
+              <button class="btn btn-outline-primary">
+                <i class="fas fa-book me-2"></i> Interactive Guides
+              </button>
+              <button class="btn btn-outline-primary">
+                <i class="fas fa-chalkboard-teacher me-2"></i> Expert Insights
+              </button>
+              <button class="btn btn-outline-primary">
+                <i class="fas fa-tools me-2"></i> Investment Tools
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
