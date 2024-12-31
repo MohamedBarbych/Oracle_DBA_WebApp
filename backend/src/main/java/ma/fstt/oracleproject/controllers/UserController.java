@@ -128,4 +128,24 @@ public class UserController {
             return http.build();
         }
     }
+
+
+    @PostMapping("/create-tablespace")
+    public ResponseEntity<String> createTablespaceForUser(@RequestParam("tablespaceName") String tablespaceName,
+                                                          @RequestParam("username") String username,
+                                                          @RequestParam("sizeInMB") int sizeInMB) {
+        try {
+            if (tablespaceName == null || tablespaceName.isEmpty() || username == null || username.isEmpty() || sizeInMB <= 0) {
+                return ResponseEntity.badRequest().body("Nom du tablespace, nom d'utilisateur et taille sont obligatoires.");
+            }
+
+            userService.createTablespaceForUser(tablespaceName, username, sizeInMB);
+            return ResponseEntity.ok("Tablespace créé et assigné à l'utilisateur avec succès.");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(500).body("Erreur lors de la création du tablespace : " + e.getMessage());
+        }
+    }
+
 }
