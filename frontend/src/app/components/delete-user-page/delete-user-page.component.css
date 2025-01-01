@@ -1,0 +1,49 @@
+/* General Styling */
+.container-xxl {
+  padding: 60px 0;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+/* Header Styling */
+.card h2 {
+  color: #e32b2b;
+  font-weight: bold;
+}
+
+/* Form Styling */
+.form-floating input {
+  border: 2px solid #e32b2b;
+  border-radius: 5px;
+  padding: 0.75rem;
+}
+
+.form-floating input:focus {
+  border-color: #c52828;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+button {
+  background-color: #e32b2b; /* Oracle Red */
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 12px 20px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c52828; /* Darker Red */
+}
+
+/* Spinner Styling */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}

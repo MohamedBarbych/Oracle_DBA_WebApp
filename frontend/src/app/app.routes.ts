@@ -8,6 +8,8 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { UserProfilComponent } from './components/user-profil/user-profil.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { SuccessPageComponent } from './components/success-page/success-page.component';
+import { FailurePageComponent } from './components/failure-page/failure-page.component';
 
 
 export const routes: Routes = [
@@ -25,8 +27,9 @@ export const routes: Routes = [
   { path: 'user-dashboard',component: UserDashboardComponent },
   { path: 'user-profil',component: UserProfilComponent },
   { path: 'create-user',component: CreateUserComponent},
-  {  path:'admin-dashboard',component: AdminDashboardComponent}
-
+  { path:'admin-dashboard',component: AdminDashboardComponent},
+  { path:'success-page',component: SuccessPageComponent},
+  { path:'failure-page',component: FailurePageComponent},
 
 
 
