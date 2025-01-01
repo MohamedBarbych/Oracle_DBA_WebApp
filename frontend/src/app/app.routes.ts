@@ -10,6 +10,7 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { SuccessPageComponent } from './components/success-page/success-page.component';
 import { FailurePageComponent } from './components/failure-page/failure-page.component';
+import { DeleteUserPageComponent } from './components/delete-user-page/delete-user-page.component';
 
 
 export const routes: Routes = [
@@ -30,6 +31,7 @@ export const routes: Routes = [
   { path:'admin-dashboard',component: AdminDashboardComponent},
   { path:'success-page',component: SuccessPageComponent},
   { path:'failure-page',component: FailurePageComponent},
+  { path:'delete-user',component: DeleteUserPageComponent }
 
 
 
