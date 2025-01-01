@@ -40,14 +40,16 @@
 
           ],
           "styles": [
-            "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/css/bootstrap.min.css",
-              "src/assets/css/style.css",
-              "src/assets/lib/animate/animate.min.css",
-              "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css",
-              "https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css",
-              "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css",
-              "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"          ]
+            "src/custom-theme.scss",
+            "@angular/material/prebuilt-themes/cyan-orange.css",
+            "src/assets/css/bootstrap.min.css",
+            "src/assets/css/style.css",
+            "src/assets/lib/animate/animate.min.css",
+            "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css",
+            "https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css",
+            "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css",
+            "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+          ]
 
           },
           "configurations": {
@@ -104,6 +106,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/cyan-orange.css",
               "src/styles.css"
             ],
             "scripts": []

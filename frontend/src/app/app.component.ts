@@ -9,5 +9,5 @@ import { RouterOutlet, RouterModule } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'SchoolAbsence';
+  title = 'Oracle DBA';
 }

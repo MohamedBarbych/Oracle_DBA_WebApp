@@ -14,8 +14,7 @@ import { Title } from '@angular/platform-browser';
 export class HomeLayoutComponent implements AfterViewInit {
 
   constructor(private titleService: Title) {
-    // Définir le titre ici
-    this.titleService.setTitle('IB - Home Page');
+    this.titleService.setTitle('Home Page');
   }
 
   ngAfterViewInit(): void {

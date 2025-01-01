@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KycTriggerPageComponent } from './kyc-trigger-page.component';
+import { AdminDashboardComponent } from './admin-dashboard.component';
 
-describe('KycTriggerPageComponent', () => {
-  let component: KycTriggerPageComponent;
-  let fixture: ComponentFixture<KycTriggerPageComponent>;
+describe('AdminDashboardComponent', () => {
+  let component: AdminDashboardComponent;
+  let fixture: ComponentFixture<AdminDashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KycTriggerPageComponent]
+      imports: [AdminDashboardComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(KycTriggerPageComponent);
+    fixture = TestBed.createComponent(AdminDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

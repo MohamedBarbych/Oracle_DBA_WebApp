@@ -6,8 +6,8 @@
 <div class="container-fluid fixed-top px-0">
   <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 bg-white shadow-sm">
     <a href="#" class="navbar-brand ms-4 ms-lg-0">
-      <h1 class="display-5 text-primary m-0 d-inline-block">InvestBuddy</h1>
-      <img class="owl-logo d-inline-block" src="assets/img/LOGO_transparent.png" alt="Logo">
+      <h1 class="display-5 text-danger m-0 d-inline-block">Oracle DBA</h1>
+      <img class="owl-logo d-inline-block" src="assets/img/oracle-logo.png" alt="Oracle Logo">
     </a>
 
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -20,30 +20,13 @@
         <a href="#services" class="nav-item nav-link">Services</a>
         <a href="#contact" class="nav-item nav-link">Contact</a>
       </div>
-      <!-- <div class="d-none d-lg-flex align-items-center"> -->
-        <!-- Register Button -->
-        <a href="/register" class="btn btn-primary btn-sm rounded-pill mx-2 d-flex align-items-center">
-          <i class="fas fa-user-plus me-2"></i> Register
-        </a>
-        <!-- Social Media Icons -->
-        <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
-          <small class="fab fa-facebook-f text-primary"></small>
-        </a>
-        <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
-          <small class="fab fa-twitter text-primary"></small>
-        </a>
-        <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
-          <small class="fab fa-linkedin-in text-primary"></small>
-        </a>
-      </div>
-      <a href="#" class="navbar-brand ms-4 ms-lg-0">
-        <img class="owl-logo2 d-inline-block" src="assets/img/maroc.png" alt="Logo">
+      <a href="/register" class="btn btn-danger btn-sm rounded-pill mx-2 d-flex align-items-center">
+        <i class="fas fa-user-plus me-2"></i> Register
       </a>
-    <!-- </div> -->
+    </div>
   </nav>
 </div>
 <!-- Navbar End -->
-
 
 <!-- Login Start -->
 <div class="container-xxl py-5 bg-light vh-100 d-flex align-items-center">
@@ -52,13 +35,13 @@
       <div class="col-lg-5">
         <div class="bg-white border rounded p-4 p-sm-5 shadow wow fadeInUp" data-wow-delay="0.3s">
           <div class="text-center mb-4">
-            <h1 class="text-primary">Login</h1>
-            <p class="text-muted">Access your InvestBuddy account</p>
+            <h1 class="text-danger">Oracle DBA Login</h1>
+            <p class="text-muted">Access your Oracle DBA account</p>
           </div>
-          <form>
+          <form (ngSubmit)="onSubmit()">
             <!-- Email -->
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+              <input type="email" class="form-control" id="email" placeholder="DbaOracle.com" required>
               <label for="email"><i class="fas fa-envelope me-2"></i>Email</label>
             </div>
             <!-- Password -->
@@ -72,18 +55,20 @@
                 <input class="form-check-input" type="checkbox" id="rememberMe">
                 <label class="form-check-label" for="rememberMe">Remember Me</label>
               </div>
-              <a href="#" class="text-primary">Forgot Password?</a>
+              <a href="#" class="text-danger">Forgot Password?</a>
             </div>
             <!-- Login Button -->
-            <button type="submit" class="btn btn-primary w-100 py-3">
+             <a routerLink="/admin-dashboard">
+            <button type="submit" class="btn btn-danger w-100 py-3">
               <i class="fas fa-sign-in-alt me-2"></i>Login
             </button>
+            </a>
           </form>
           <hr class="my-4">
           <!-- Register Link -->
           <div class="text-center">
             <p class="mb-0">Don’t have an account?
-              <a href="/register" class="text-primary fw-bold">Register Now</a>
+              <a href="/register" class="text-danger fw-bold">Register Now</a>
             </p>
           </div>
         </div>
@@ -94,4 +79,4 @@
 <!-- Login End -->
 
 <!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+<a href="#" class="btn btn-lg btn-danger btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>

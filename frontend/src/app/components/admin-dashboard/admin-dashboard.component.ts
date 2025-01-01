@@ -3,19 +3,16 @@ import { Component, AfterViewInit } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-// Import Chart.js
-import Chart from 'chart.js/auto';
-
 @Component({
-  selector: 'app-user-dashboard',
+  selector: 'app-admin-dashboard',
   standalone: true,
   imports: [RouterOutlet, RouterModule, CommonModule],
-  templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.css']
+  templateUrl: './admin-dashboard.component.html',
+  styleUrl: './admin-dashboard.component.css'
 })
-export class UserDashboardComponent implements AfterViewInit {
+export class AdminDashboardComponent {
   constructor(private titleService: Title) {
-    this.titleService.setTitle('Users Management');
+    this.titleService.setTitle('Admin Dashboard');
   }
 
   ngAfterViewInit(): void {

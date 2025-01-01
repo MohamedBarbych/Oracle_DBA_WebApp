@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -12,7 +14,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class LoginPageComponent {
 
-  constructor(private titleService: Title) {
+  constructor(private titleService: Title,private router: Router) {
     // Définir le titre ici
     this.titleService.setTitle('IB - Login Page');
   }
@@ -140,6 +142,10 @@ export class LoginPageComponent {
     }
   }
 
+  onSubmit() {
+    this.router.navigate(['/admin-dashboard']); // Navigate back to the students list
+
+  }
 
 
 
