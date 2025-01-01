@@ -34,19 +34,6 @@ public class UserController {
         }
     }
 
-    @Configuration
-    @EnableWebSecurity
-    public class SecurityConfig {
 
-        @Bean
-        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-            http
-                    .csrf(csrf -> csrf.disable()) // Disable CSRF protection
-                    .authorizeHttpRequests(auth -> auth
-                            .requestMatchers("/api/users/**").permitAll() // Allow access to UserController endpoints
-                            .anyRequest().authenticated()); // Require authentication for all other endpoints
-            return http.build();
-        }
-    }
 
 }

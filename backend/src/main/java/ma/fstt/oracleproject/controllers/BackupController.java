@@ -61,20 +61,6 @@ public class BackupController {
         }
     }
 
-    @Configuration
-    @EnableWebSecurity
-    public class BackupSecurityConfig {
-
-        @Bean(name = "backupSecurityFilterChain")
-        public SecurityFilterChain backupSecurityFilterChain(HttpSecurity http) throws Exception {
-            http
-                    .csrf(csrf -> csrf.disable()) // Disable CSRF protection for testing
-                    .authorizeHttpRequests(auth -> auth
-                            .requestMatchers("/api/backup/**").permitAll() // Allow access to BackupController endpoints
-                            .anyRequest().authenticated()); // Require authentication for all other endpoints
-            return http.build();
-        }
-    }
 
 
 }
