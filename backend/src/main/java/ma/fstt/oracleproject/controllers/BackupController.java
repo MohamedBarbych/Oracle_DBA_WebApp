@@ -50,15 +50,17 @@ public class BackupController {
     }
 
     @GetMapping("/history")
-    public ResponseEntity<List<String>> getBackupHistory(){
-        try{
+    public ResponseEntity<List<String>> getBackupHistory() {
+        try {
             List<String> history = backupService.getBackupHistory();
             return ResponseEntity.ok(history);
-        } catch (SQLException e){
+        } catch (SQLException e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(Collections.singletonList("Error retrieving backup history"));
+                    .body(Collections.singletonList("Error retrieving backup history."));
         }
     }
+
     @Configuration
     @EnableWebSecurity
     public class BackupSecurityConfig {
@@ -68,7 +70,7 @@ public class BackupController {
             http
                     .csrf(csrf -> csrf.disable()) // Disable CSRF protection for testing
                     .authorizeHttpRequests(auth -> auth
-                            .requestMatchers("/api/backup/full").permitAll() // Allow access to BackupController endpoints
+                            .requestMatchers("/api/backup/**").permitAll() // Allow access to BackupController endpoints
                             .anyRequest().authenticated()); // Require authentication for all other endpoints
             return http.build();
         }
