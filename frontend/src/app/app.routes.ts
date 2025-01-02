@@ -11,7 +11,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { SuccessPageComponent } from './components/success-page/success-page.component';
 import { FailurePageComponent } from './components/failure-page/failure-page.component';
 import { DeleteUserPageComponent } from './components/delete-user-page/delete-user-page.component';
-
+import { UpdateUserComponent } from  './components/update-user/update-user.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -31,8 +31,8 @@ export const routes: Routes = [
   { path:'admin-dashboard',component: AdminDashboardComponent},
   { path:'success-page',component: SuccessPageComponent},
   { path:'failure-page',component: FailurePageComponent},
-  { path:'delete-user',component: DeleteUserPageComponent }
-
+  { path:'delete-user',component: DeleteUserPageComponent },
+  { path:'update-user',component: UpdateUserComponent }
 
 
 
