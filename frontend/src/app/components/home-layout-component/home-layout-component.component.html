@@ -1,0 +1,158 @@
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+  <div class="spinner-border text-danger" role="status" style="width: 3rem; height: 3rem;"></div>
+</div>
+
+<!-- Navbar Start -->
+<div class="container-fluid fixed-top px-0">
+  <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
+    <a href="#" class="navbar-brand ms-4 ms-lg-0">
+      <h1 class="display-5 text-danger m-0 d-inline-block">Oracle DBA Platform</h1>
+      <img class="owl-logo d-inline-block" src="assets/img/oracle-logo.png" alt="Oracle Logo">
+    </a>
+
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <a href="#" class="nav-itemSP nav-link active">Home</a>
+        <a href="#about" class="nav-item nav-link">About</a>
+        <a href="#services" class="nav-item nav-link">Services</a>
+        <a href="#contact" class="nav-item nav-link">Contact</a>
+      </div>
+      <div class="d-none d-lg-flex align-items-center">
+          <!-- Login Button -->
+          <a href="/login" class="btn btn-outline-danger btn-sm rounded-pill mx-2 d-flex align-items-center">
+            <i class="fas fa-sign-in-alt me-2"></i> Login
+          </a>
+           <!-- Register Button -->
+           <a href="/register" class="btn btn-danger btn-sm rounded-pill mx-2 d-flex align-items-center">
+            <i class="fas fa-user-plus me-2"></i> Register
+          </a>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- Navbar End -->
+
+<!-- Carousel Start -->
+<div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="w-100" src="assets/img/carousel-3.png" alt="Slide 1">
+      <div class="carousel-caption">
+        <div class="container">
+          <div class="row justify-content-start">
+            <div class="col-lg-8">
+              <p class="d-inline-block border border-white rounded text-danger fw-semi-bold py-1 px-3">Oracle DBA Platform</p>
+              <h1 class="display-1 mb-4">Optimize Your Database Performance</h1>
+              <a href="#" class="btn btn-danger py-3 px-5">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Carousel End -->
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-4 align-items-end mb-4">
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+        <img class="img-fluid rounded" src="assets/img/oracle-logo.png" alt="Oracle DBA Platform">
+      </div>
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+        <p class="d-inline-block border rounded text-danger fw-semi-bold py-1 px-3">About Oracle DBA Platform</p>
+        <h1 class="display-5 mb-4">Empowering DBAs with Cutting-Edge Tools</h1>
+        <p class="mb-4">
+          Oracle DBA Platform provides comprehensive tools and insights for managing, securing, and optimizing your Oracle databases. With advanced monitoring, security configurations, and performance enhancements, we empower database administrators to handle complex tasks effortlessly.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- About End -->
+
+<!-- Services Start -->
+<div class="container-xxl py-5">
+  <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+    <p class="d-inline-block border rounded text-danger fw-semi-bold py-1 px-3">Our Services</p>
+    <h1 class="display-5 mb-5">Comprehensive Services for Oracle Database Administration</h1>
+  </div>
+  <div class="row g-4">
+    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+      <div class="card border rounded p-4">
+        <h5 class="mb-3">User Management</h5>
+        <p>Manage Oracle database users, assign roles, and enforce security policies.</p>
+        <a href="/user-management" class="btn btn-danger">Manage Users</a>
+      </div>
+    </div>
+    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+      <div class="card border rounded p-4">
+        <h5 class="mb-3">Security Management</h5>
+        <p>Configure Transparent Data Encryption (TDE) and enable auditing.</p>
+        <a href="/security-management" class="btn btn-danger">Configure Security</a>
+      </div>
+    </div>
+    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+      <div class="card border rounded p-4">
+        <h5 class="mb-3">Performance Management</h5>
+        <p>Monitor and enhance database performance through various AWR and ASH reports.</p>
+        <a href="/performance-management" class="btn btn-danger">Optimize Performance</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Services End -->
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+  <div class="container py-5">
+    <div class="row g-5">
+      <div class="col-lg-3 col-md-6">
+        <h4 class="text-white mb-4">Our Office</h4>
+        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Tangier, Morocco</p>
+        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+212 5345 67890</p>
+        <p class="mb-2"><i class="fa fa-envelope me-3"></i>oracledbaplatform-Oracle.com</p>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h4 class="text-white mb-4">Services</h4>
+        <a class="btn btn-link" href="">Database Configuration</a>
+        <a class="btn btn-link" href="">Database Security</a>
+        <a class="btn btn-link" href="">Performance Tuning</a>
+        <a class="btn btn-link" href="">Backup & Recovery</a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h4 class="text-white mb-4">Quick Links</h4>
+        <a class="btn btn-link" href="">About Us</a>
+        <a class="btn btn-link" href="">Contact Us</a>
+        <a class="btn btn-link" href="">Services</a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h4 class="text-white mb-4">Newsletter</h4>
+        <div class="position-relative w-100">
+          <input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+          <button type="button" class="btn btn-danger py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+<!-- Copyright Start -->
+<div class="container-fluid copyright py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        &copy; <a class="border-bottom" href="#">Oracle DBA Platform</a>, All Right Reserved.
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        FST Tangier <a class="border-bottom" href="https://oracle.com">LSI</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Copyright End -->

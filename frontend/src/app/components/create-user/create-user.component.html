@@ -1,0 +1,58 @@
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card border rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.5s">
+          <h2 class="display-6 text-center text-danger mb-4">Create New User</h2>
+
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <!-- Username Field -->
+            <div class="mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username" required>
+                <mat-error *ngIf="form.controls['username'].invalid && form.controls['username'].touched">
+                  Username is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" required type="password">
+                <mat-error *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+                  Password is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <!-- Roles Field -->
+            <div class="mb-3">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Roles</mat-label>
+                <input matInput formControlName="roles" required>
+                <mat-error *ngIf="form.controls['roles'].invalid && form.controls['roles'].touched">
+                  Roles are required
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="text-center">
+              <button mat-raised-button color="warn" type="submit" class="w-100 py-3" [disabled]="isLoading">
+                <mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner>
+                Create User
+              </button>
+            </div>
+          </form>
+
+          <!-- Custom Alerts -->
+          <div *ngIf="alertVisible" [ngClass]="{'success-alert': alertType === 'success', 'error-alert': alertType === 'error'}" class="alert-container">
+            {{ alertMessage }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
