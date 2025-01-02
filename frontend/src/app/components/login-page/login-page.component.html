@@ -1,0 +1,82 @@
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+  <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+</div>
+
+<!-- Navbar Start -->
+<div class="container-fluid fixed-top px-0">
+  <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 bg-white shadow-sm">
+    <a href="#" class="navbar-brand ms-4 ms-lg-0">
+      <h1 class="display-5 text-danger m-0 d-inline-block">Oracle DBA</h1>
+      <img class="owl-logo d-inline-block" src="assets/img/oracle-logo.png" alt="Oracle Logo">
+    </a>
+
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <a href="#" class="nav-item nav-link active">Home</a>
+        <a href="#about" class="nav-item nav-link">About</a>
+        <a href="#services" class="nav-item nav-link">Services</a>
+        <a href="#contact" class="nav-item nav-link">Contact</a>
+      </div>
+      <a href="/register" class="btn btn-danger btn-sm rounded-pill mx-2 d-flex align-items-center">
+        <i class="fas fa-user-plus me-2"></i> Register
+      </a>
+    </div>
+  </nav>
+</div>
+<!-- Navbar End -->
+
+<!-- Login Start -->
+<div class="container-xxl py-5 bg-light vh-100 d-flex align-items-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div class="bg-white border rounded p-4 p-sm-5 shadow wow fadeInUp" data-wow-delay="0.3s">
+          <div class="text-center mb-4">
+            <h1 class="text-danger">Oracle DBA Login</h1>
+            <p class="text-muted">Access your Oracle DBA account</p>
+          </div>
+          <form (ngSubmit)="onSubmit()">
+            <!-- Email -->
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="email" placeholder="DbaOracle.com" required>
+              <label for="email"><i class="fas fa-envelope me-2"></i>Email</label>
+            </div>
+            <!-- Password -->
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="password" placeholder="Password" required>
+              <label for="password"><i class="fas fa-lock me-2"></i>Password</label>
+            </div>
+            <!-- Remember Me -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember Me</label>
+              </div>
+              <a href="#" class="text-danger">Forgot Password?</a>
+            </div>
+            <!-- Login Button -->
+             <a routerLink="/admin-dashboard">
+            <button type="submit" class="btn btn-danger w-100 py-3">
+              <i class="fas fa-sign-in-alt me-2"></i>Login
+            </button>
+            </a>
+          </form>
+          <hr class="my-4">
+          <!-- Register Link -->
+          <div class="text-center">
+            <p class="mb-0">Don’t have an account?
+              <a href="/register" class="text-danger fw-bold">Register Now</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Login End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-danger btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>

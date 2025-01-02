@@ -1,0 +1,93 @@
+/* General Styling */
+.container-xxl {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+h2 {
+  color: #e32b2b; /* Oracle Red */
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+.form-control:focus {
+  border-color: #e32b2b;
+  box-shadow: 0 0 5px rgba(227, 43, 43, 0.5);
+}
+
+.btn-danger {
+  background-color: #e32b2b;
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #c52828;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #e32b2b;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Icon Styling */
+.fas {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color: #e32b2b;
+}
+
+.fas:hover {
+  color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 991px) {
+  .container-xxl {
+    padding: 40px 0;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .card h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-xxl {
+    padding: 20px 0;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card h2 {
+    font-size: 1.8rem;
+  }
+}
