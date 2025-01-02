@@ -42,8 +42,65 @@
 }
 
 /* Service Button Styling */
-.service-btn {
-  background-color: #e32b2b;
+.service-btn1 {
+  background-color: #1df086;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Service Button Styling */
+.service-btn2 {
+  background-color: #2b90e3;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}/* Service Button Styling */
+.service-btn3 {
+  background-color: #d26dfa;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}/* Service Button Styling */
+.service-btn4 {
+  background-color: #ff943d;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}/* Service Button Styling */
+.service-btn5 {
+  background-color: #a89898;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}/* Service Button Styling */
+.service-btn6 {
+  background-color: #bb763d;
   color: white;
   font-weight: bold;
   padding: 20px;
@@ -310,4 +367,14 @@
 
 .team-social .btn:hover {
   background-color: #c52828;
+}
+
+
+
+
+.body
+{
+  background-color: #ffdbdb;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }

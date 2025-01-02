@@ -12,6 +12,7 @@ import { SuccessPageComponent } from './components/success-page/success-page.com
 import { FailurePageComponent } from './components/failure-page/failure-page.component';
 import { DeleteUserPageComponent } from './components/delete-user-page/delete-user-page.component';
 import { UpdateUserComponent } from  './components/update-user/update-user.component';
+import { AssignRoleComponent } from './components/asign-role/asign-role.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -25,15 +26,14 @@ export const routes: Routes = [
 
   { path: 'login',component: LoginPageComponent },
   { path: 'register',component: RegisterPageComponent },
-  { path: 'user-dashboard',component: UserDashboardComponent },
+  { path: 'user-management',component: UserDashboardComponent },
   { path: 'user-profil',component: UserProfilComponent },
   { path: 'create-user',component: CreateUserComponent},
   { path:'admin-dashboard',component: AdminDashboardComponent},
   { path:'success-page',component: SuccessPageComponent},
   { path:'failure-page',component: FailurePageComponent},
   { path:'delete-user',component: DeleteUserPageComponent },
-  { path:'update-user',component: UpdateUserComponent }
-
-
+  { path:'update-user',component: UpdateUserComponent },
+  { path: 'asign-role',component: AssignRoleComponent },
 
 ];

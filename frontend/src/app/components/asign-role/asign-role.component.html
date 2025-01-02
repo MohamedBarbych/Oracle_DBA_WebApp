@@ -1,0 +1,46 @@
+<!-- assign-role.component.html -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card p-4 p-sm-5 shadow wow fadeInUp">
+          <div class="text-center mb-4">
+            <h2 class="text-danger">Assign Role to User</h2>
+            <p class="text-muted">Enter username and select a role to assign to the user.</p>
+          </div>
+
+          <!-- Form to Assign Role -->
+          <form (ngSubmit)="onSubmit()">
+            <!-- Username Field -->
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="username" placeholder="Username" formControlName="username" name="username" required>
+              <label for="username"><i class="fas fa-user-tag me-2"></i>Username</label>
+            </div>
+
+            <!-- Role Field -->
+            <div class="form-floating mb-3">
+              <select class="form-control" id="role" formControlName="role" name="role" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <option value="editor">Editor</option>
+              </select>
+              <label for="role"><i class="fas fa-user-shield me-2"></i>Role</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-danger w-100 py-3" [disabled]="isLoading">
+              <i class="fas fa-check-circle me-2"></i>Assign Role
+            </button>
+          </form>
+
+          <!-- Loading Spinner -->
+          <div *ngIf="isLoading" class="text-center mt-3">
+            <div class="spinner-border text-danger" role="status"></div>
+            <p class="text-muted">Assigning role...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
