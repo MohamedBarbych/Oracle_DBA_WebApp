@@ -112,22 +112,22 @@ public class UserController {
     }
 
     // Configuration de la sécurité
-//    @Configuration
-//    @EnableWebSecurity
-//    public class SecurityConfig {
-//
-//        @Bean
-//        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//            http
-//                    .csrf(csrf -> csrf.disable()) // Disable CSRF for testing
-//                    .authorizeHttpRequests(auth -> auth
-//                            .requestMatchers("/api/users/**").permitAll() // Allow all requests to this endpoint
-//                            .anyRequest().permitAll() // Allow all other requests (for testing)
-//                    );
-//
-//            return http.build();
-//        }
-//    }
+    @Configuration
+    @EnableWebSecurity
+    public class SecurityConfig {
+
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+            http
+                    .csrf(csrf -> csrf.disable()) // Disable CSRF for testing
+                    .authorizeHttpRequests(auth -> auth
+                            .requestMatchers("/api/users/**").permitAll() // Allow all requests to this endpoint
+                            .anyRequest().permitAll() // Allow all other requests (for testing)
+                    );
+
+            return http.build();
+        }
+    }
 
 
     @PostMapping("/create-tablespace")
