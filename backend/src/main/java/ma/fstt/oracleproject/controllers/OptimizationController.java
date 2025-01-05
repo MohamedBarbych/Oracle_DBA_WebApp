@@ -17,7 +17,7 @@ public class OptimizationController {
     private OptimizationService optimizationService;
 
     // endpoint pour recuperer les requetes lentes
-    @GetMapping("/slow-queries")
+/*    @GetMapping("/slow-queries")
     public ResponseEntity<List<Map<String,Object>>> getSlowQueries() {
         try{
             List<Map<String,Object>> slowQueries = optimizationService.getSlowQueries();
@@ -32,6 +32,42 @@ public class OptimizationController {
     // Endpoint pour optimiser une requête spécifique (par sql_id)
 
     @GetMapping("/optimize-query/{sqlId}")
+    public ResponseEntity<String> optimizeQuery(@PathVariable String sqlId) {
+        try {
+            String optimizedQuery = optimizationService.executeTuningTaskAndGetOptimizedQuery(sqlId);
+            return ResponseEntity.ok(optimizedQuery);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error while optimizing query: " + e.getMessage());
+        }
+    }*/
+    @GetMapping("/slow-queries")
+    public ResponseEntity<List<Map<String,Object>>> getSlowQueries() {
+        try {
+            List<Map<String,Object>> slowQueries = optimizationService.getSlowQueries();
+            return ResponseEntity.ok(slowQueries);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(List.of(Map.of("Error", "Error fetching slow queries: " + e.getMessage())));
+        }
+    }
+
+    // Endpoint pour optimiser une requête spécifique (par sql_id)
+    @GetMapping("/optimize-query/{sqlId}")
+    public String optimizeQuery(@PathVariable String sqlId) {
+        // Créer une tâche de tuning
+        String taskName = optimizationService.createTuningTask(sqlId);
+
+        // Exécuter la tâche de tuning
+        optimizationService.executeTuningTask(taskName);
+
+        // Extraire la requête optimisée
+        String optimizedQuery = optimizationService.getOptimizedQuery(taskName);
+
+        return optimizedQuery; // Retourner la requête optimisée au client
+    }
+}
+
+
+    /*
     public ResponseEntity<List<Map<String, Object>>> getRecommendations(@PathVariable String sqlId) {
         try {
             // Appel au service pour obtenir les recommandations d'optimisation
@@ -52,6 +88,7 @@ public class OptimizationController {
         }
     }
 
+*/
 
 
-}
+
