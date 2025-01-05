@@ -12,6 +12,7 @@ import { SuccessPageComponent } from './components/success-page/success-page.com
 import { FailurePageComponent } from './components/failure-page/failure-page.component';
 import { DeleteUserPageComponent } from './components/delete-user-page/delete-user-page.component';
 import { UpdateUserComponent } from  './components/update-user/update-user.component';
+import {OptimizationComponent} from './components/optimization/optimization.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -32,7 +33,8 @@ export const routes: Routes = [
   { path:'success-page',component: SuccessPageComponent},
   { path:'failure-page',component: FailurePageComponent},
   { path:'delete-user',component: DeleteUserPageComponent },
-  { path:'update-user',component: UpdateUserComponent }
+  { path:'update-user',component: UpdateUserComponent },
+  { path: 'optimization', component: OptimizationComponent }
 
 
 
