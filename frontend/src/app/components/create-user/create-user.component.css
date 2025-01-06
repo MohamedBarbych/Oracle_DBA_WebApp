@@ -1,104 +1,140 @@
 /* General Layout Styling */
 .container-xxl {
   padding: 60px 0;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #ff6b6b, #f8f9fa);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body{
+  padding: 60px 0;
+  background: linear-gradient(135deg, #ff6b6b, #f8f9fa);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
-  background-color: #fff;
+  background: linear-gradient(135deg, #fff, #ffeaea);
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   padding: 2rem;
   position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 107, 107, 0.3);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 107, 107, 0.3);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.card h2 {
+  z-index: 1;
+  position: relative;
+  color: #e63946;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Form Label Styling */
-.form-label {
+.mat-label {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #e32b2b; /* Red */
+  color: #e63946; /* Vibrant Red */
 }
 
 /* Input Field Styling */
-.form-input {
+.mat-form-field {
   width: 100%;
-  padding: 12px;
+}
+
+.mat-input-element {
   font-size: 1rem;
-  border: 2px solid #e32b2b;
+  padding: 12px;
+  border: 1px solid #e63946;
   border-radius: 5px;
-  margin-bottom: 1.2rem;
-  background-color: #f2f2f2;
+  background-color: #fff;
   color: #333;
   transition: all 0.3s ease-in-out;
 }
 
-.form-input:focus {
-  border-color: #c52828; /* Darker Red */
+.mat-input-element:focus {
+  border-color: #d62828; /* Darker Red */
+  box-shadow: 0 0 8px rgba(230, 57, 70, 0.4);
   outline: none;
-  transform: scale(1.05);
 }
 
 /* Button Styling */
-.submit-button {
-  background-color: #e32b2b;
+button.mat-raised-button {
+  background: linear-gradient(135deg, #e63946, #ff6b6b);
   color: white;
   font-weight: bold;
   padding: 12px 24px;
   border-radius: 5px;
   font-size: 1.2rem;
-  border: none;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.submit-button:hover {
-  background-color: #c52828; /* Darker Red */
+button.mat-raised-button:hover {
+  background: linear-gradient(135deg, #d62828, #e63946);
   transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Spinner Styling */
+.mat-spinner {
+  margin: 0 auto;
+  display: block;
 }
 
 /* Error Message Styling */
-.error-message {
-  color: #f44336; /* Red */
+.mat-error {
   font-size: 0.9rem;
-  margin-top: 5px;
+  color: #d62828; /* Strong Red */
 }
 
 /* Custom Alert Styling */
 .alert-container {
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
   text-align: center;
   margin-top: 15px;
-  width: 80%;
-  margin: 0 auto;
   transition: opacity 0.5s ease-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .success-alert {
-  background-color: #4CAF50; /* Green */
+  background: linear-gradient(135deg, #38a169, #81c784);
   color: white;
 }
 
 .error-alert {
-  background-color: #f44336; /* Red */
+  background: linear-gradient(135deg, #e63946, #ff6b6b);
   color: white;
-}
-
-/* Spinner Styling */
-.spinner {
-  display: inline-block;
-  border: 4px solid transparent;
-  border-top: 4px solid white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: spin 1s linear infinite;
-}
-
-/* Icon Styling */
-.fas {
-  margin-right: 8px;
-  color: #e32b2b;
 }
 
 /* Responsive Styling */
@@ -129,13 +165,25 @@
     font-size: 1.8rem;
   }
 
-  .submit-button {
+  button.mat-raised-button {
     padding: 12px 20px;
   }
 }
 
-/* Spin Animation */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+/* Animations */
+.wow {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

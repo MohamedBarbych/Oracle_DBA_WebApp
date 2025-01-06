@@ -40,19 +40,29 @@ export class UpdateUserComponent {
 
       this.isLoading = true;  // Show loading spinner when submitting the form
 
-      this.userService.updateUser(username, password, roles).subscribe({
-        next: (response) => {
-          // Redirect to success page on successful update
-          this.router.navigate(['/success-page']);
-        },
-        error: (error) => {
-          // Redirect to failure page on error
-          this.router.navigate(['/success-page']);
-        },
-        complete: () => {
-          this.isLoading = false;  // Reset loading state
-        }
-      });
+
+      setTimeout(() => {
+
+        this.userService.updateUser(username, password, roles).subscribe({
+
+          next: (response) => {
+            // if (response === 'user created') {
+              this.isLoading = false;
+              this.showAlert('User created successfully', 'success');
+              this.form.reset(); // Reset the form après succès
+            },
+          // },
+          error: () => {
+
+
+
+            this.isLoading = false;
+            this.showAlert('Error creating the user, Verify if the user already exists', 'error');
+          }
+        });
+      }, 2000);
+
+
     }
   }
 }
