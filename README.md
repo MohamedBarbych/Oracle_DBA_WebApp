@@ -9,7 +9,7 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
 
 ### **Fonctionnalités Principales**
 
-- 🔒 **Gestion des Utilisateurs** :
+- 🔒 **Gestion des Utilisateurs** :   
   - Création, modification et suppression de comptes utilisateurs.
   - Gestion des privilèges et des rôles utilisateurs.
 
