@@ -17,7 +17,7 @@ export class OptimizationService {
   }
 
   // optimiser une requete specifique
-  optimizeQuery(sqlId: string): Observable<any>{
-    return this.http.get<any>(`${this.apiUrl}/slow-queries/${sqlId}`);
+  optimizeQuery(sqlId: string): Observable<string>{
+    return this.http.get(`${this.apiUrl}/optimize-query/${sqlId}`,{ responseType: "text"});
   }
 }

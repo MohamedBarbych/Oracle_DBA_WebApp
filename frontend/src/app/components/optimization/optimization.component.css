@@ -1,102 +1,99 @@
-/* General Styling */
-.container-xxl {
-  padding: 60px 0;
-  margin-top: 90px;
+/* Tableau - Ajout d'une apparence plus sophistiquée */
+table {
+  margin-top: 30px;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.card {
+/* Style des en-têtes du tableau */
+/* Style des en-têtes du tableau */
+thead {
+  background-color: #e32b2b;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+thead th {
+  padding: 15px;
+  transition: transform 0.3s ease;  /* Transition pour le mouvement */
+}
+
+thead th:hover {
+  transform: translateY(-5px); /* Effet de mouvement au survol */
+  cursor: pointer;    /* Changer le curseur en main */
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #f1f1f1;
+}
+
+tbody tr {
   background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
-  position: relative;
-}
-
-.oracle-logo {
-  width: 750px;
-  height: 350px;
-}
-
-/* Header Styling */
-.header h2 {
-  color: #e32b2b;
-  font-weight: bold;
-}
-
-.logout-btn, .service-btn {
-  font-weight: bold;
-  border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.logout-btn {
-  background-color: #f44336;
-  color: white;
+tbody tr:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-5px);
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+  font-size: 0.9rem;
   padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.logout-btn:hover {
-  background-color: #c52828;
-}
-
-.logout-btn i {
-  margin-right: 8px;
-}
-
-/* Service Button Styling */
-.service-btn {
-  background-color: #e32b2b;
-  color: white;
-  padding: 20px;
-  width: 100%;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-.service-btn i {
-  margin-right: 10px;
-}
-
-.service-btn:hover {
-  background-color: #c52828;
+.btn-success:hover {
+  background-color: #218838;
   transform: translateY(-3px);
 }
 
-.service-btn:focus, .service-btn:active {
-  transform: scale(1.05);
+.btn-success:active {
+  transform: scale(0.98);
 }
 
-/* Responsive Styling */
-@media (max-width: 991px) {
-  .container-xxl {
-    padding: 40px 0;
-  }
-
-  .card {
-    padding: 2rem;
-  }
-
-  .card h2 {
-    font-size: 2rem;
-  }
+/* Fenêtre modale - Animation et style plus élégant */
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 576px) {
-  .service-btn {
-    font-size: 1rem;
-    padding: 15px;
-  }
+.modal-header {
+  background-color: #e32b2b;
+  color: #fff;
+  border-bottom: 1px solid #f1f1f1;
 }
 
-/* Enhanced Loading Spinner */
-.spinner {
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #e32b2b;
+.modal-body {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.modal-footer {
+  border-top: 1px solid #f1f1f1;
+}
+
+.text-success {
+  font-size: 3rem;
+}
+
+/* Animation spinner plus sophistiquée */
+.spinner-border {
+  border-width: 6px;
+  border-top: 6px solid #e32b2b;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: spin 2s linear infinite;
+  animation: spin 1.5s linear infinite;
 }
 
 @keyframes spin {
@@ -104,176 +101,80 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Custom Alert Styling */
-.alert-container {
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 15px;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  transition: opacity 0.5s ease-out;
+/* Effet de survol sur les éléments du tableau */
+tbody tr:hover td {
+  background-color: #f1f1f1;
 }
 
-.success-alert {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.error-alert {
-  background-color: #f44336;
-  color: white;
-}
-
-/* Hover Effects for Service Cards */
-.service-btn:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Navbar Branding */
-.navbar-brand img.owl-logo,
-.navbar-brand img.owl-logo2 {
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
-.navbar-brand img.owl-logo {
-  height: 70px;
-  width: 130px;
-}
-
-.navbar-brand img.owl-logo2 {
-  height: 30px;
-  width: 50px;
-}
-
-/* Navbar Buttons */
-.navbar .btn {
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar .btn-outline-danger {
-  color: #e32b2b;
-  border: 1px solid #e32b2b;
-  background-color: transparent;
-}
-
-.navbar .btn-outline-danger:hover {
-  background-color: #e32b2b;
-  color: #ffffff;
-}
-
-.navbar .btn-danger {
-  background: linear-gradient(45deg, #e32b2b, #c52828);
-  color: #ffffff;
-  border: none;
-}
-
-.navbar .btn-danger:hover {
-  background: linear-gradient(45deg, #c52828, #9a2121);
-}
-
-.navbar .nav-item:hover, .navbar .nav-itemSP {
-  background-color: #ffffff;
-  color: #e32b2b;
-}
-
-/* Social Media Icons */
-.navbar .btn-light {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0 5px;
-  border-radius: 50%;
-}
-
-.navbar .btn-light:hover {
-  background-color: #e9ecef;
-}
-
-/* Responsive Styling for Navbar */
-@media (max-width: 991px) {
-  .navbar {
-    padding: 1rem;
-  }
-
-  .navbar .btn-light {
-    width: 40px;
-    height: 40px;
-    margin: 0.4rem auto;
-    padding: 0.2rem;
-  }
-
-  .navbar .btn-outline-danger,
-  .navbar .btn-danger {
-    width: 100%;
-    margin-bottom: 0.5rem;
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .navbar-brand img.owl-logo {
-    height: 70px;
-    width: 80px;
-  }
-
-  .navbar-brand img.owl-logo2 {
-    height: 25px;
-    width: 40px;
-  }
-}
-
-/* Team Section Styling */
-.team-item {
-  border: 1px solid #e9ecef;
+/* Ajout d'ombres et d'animations de transition */
+table, th, td {
   border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.team-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+/* Style pour le champ de recherche */
+/* Style du champ de recherche */
+#searchQuery {
+  padding: 10px 15px;           /* Ajustement du padding */
+  border: 1px solid #ddd;       /* Bordure discrète */
+  border-radius: 8px;          /* Bords arrondis */
+  margin-left: 10px;
+  font-size: 1rem;            /* Taille de la police */
+  color: #333;                /* Couleur du texte */
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Légère ombre interne */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition douce */
 }
 
-.team-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+#searchQuery:focus {
+  border-color: #e32b2b; /* Changement de couleur de bordure au focus */
+  outline: none; /* Supprime l'outline par défaut au focus */
+  box-shadow: 0 0 0 0.25rem rgba(227, 43, 43, 0.25); /* Ajout d'une petite ombre lors du focus */
 }
 
-.team-text h4 {
-  font-size: 1.25rem;
-  font-weight: bold;
+
+#searchQuery::placeholder {
+  color: #aaa; /* Couleur du texte placeholder */
 }
 
-.team-text span {
-  font-size: 0.9rem;
-  color: #6c757d;
-}
-
-.team-social .btn {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+button {
   background-color: #e32b2b;
+  color: white;
+  font-size: 0.85rem;
   transition: background-color 0.3s ease;
 }
 
-.team-social .btn:hover {
+button:hover {
   background-color: #c52828;
+}
+
+.query-column {
+  font-family: "Courier New", Courier, monospace; /* Police monospace pour le code */
+  white-space: pre-wrap; /* Permet d'afficher les retours à la ligne */
+  word-wrap: break-word; /* Permet de couper les longues lignes */
+  background-color: #f8f9fa; /* Fond gris clair */
+  border: 1px solid #ddd; /* Bordure discrète */
+  padding: 5px; /* Espacement interne */
+}
+/* Style du bouton Refresh */
+.btn-outline-danger {
+  border: 2px solid #e32b2b; /* Bordure plus épaisse et couleur principale */
+  color: #e32b2b;           /* Couleur du texte */
+  background-color: transparent; /* Fond transparent */
+  padding: 10px 20px;      /* Ajustement du padding */
+  border-radius: 8px;       /* Bords arrondis */
+  font-weight: 600;          /* Texte en gras */
+  transition: all 0.3s ease; /* Transition douce */
+}
+
+.btn-outline-danger:hover {
+  background-color: #e32b2b;  /* Changement de couleur de fond au survol */
+  color: white;        /* Changement de couleur de texte au survol */
+  border-color: #c52828;
+  transform: translateY(-2px); /* Petit effet de déplacement */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+.btn-outline-danger:focus {
+  outline: none; /* Supprimer l'outline au focus*/
+  box-shadow: 0 0 0 0.25rem rgba(227, 43, 43, 0.25); /* Ajout d'une petite ombre lors du focus */
 }

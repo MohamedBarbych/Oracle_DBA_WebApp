@@ -1,76 +1,76 @@
-<!--
-<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-  <div class="spinner-border text-danger" role="status" style="width: 3rem; height: 3rem;"></div>
-</div>
-
-&lt;!&ndash; Navbar Start &ndash;&gt;
-<div class="container-fluid fixed-top px-0">
-  <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
-    <a href="#" class="navbar-brand ms-4 ms-lg-0">
-      <h1 class="display-5 text-danger m-0 d-inline-block">Oracle DBA Platform</h1>
-      <img class="owl-logo d-inline-block" src="assets/img/oracle-logo.png" alt="Oracle Logo">
-    </a>
-
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav ms-auto p-4 p-lg-0">
-        <a href="#" class="nav-itemSP nav-link">Admin</a>
-        <a href="#about" class="nav-item nav-link">About</a>
-        <a href="#services" class="nav-item nav-link active">Optimization</a>
-        <a href="#contact" class="nav-item nav-link">Contact</a>
-      </div>
-      <div class="d-none d-lg-flex align-items-center">
-        <a href="/" class="btn btn-outline-danger btn-sm rounded-pill mx-2 d-flex align-items-center">
-          <i class="fas fa-sign-in-alt me-2"></i> Logout
-        </a>
-      </div>
-    </div>
-  </nav>
-</div>
-&lt;!&ndash; Navbar End &ndash;&gt;
-
--->
-
-
-
-
-
-
-
-<!-- Optimization Page -->
 <div class="container-xxl py-5">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card p-5 wow fadeInUp">
-          <div class="header d-flex justify-content-between align-items-center mb-4">
-            <h2 class="display-6 text-center text-danger">Optimization Page</h2>
+    <h2 class="display-6 text-center text-danger mb-4">Optimization Page</h2>
+
+    <!-- Bouton Refresh pour charger les requêtes lentes -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <button
+        class="btn btn-sm btn-outline-danger"
+        (click)="loadSlowQueries()"
+      >
+        Refresh
+      </button>
+      <input type="text" id="searchQuery"  placeholder="Search Query or ID..."
+             [(ngModel)]="searchText" (input)="searchQueries()"/>
+    </div>
+
+    <!-- Tableau des requêtes lentes, affiché uniquement  après avoir cliqué sur "Refresh" -->
+    <div *ngIf="slowQueries.length > 0">
+      <table class="table table-bordered table-striped">
+        <thead class="bg-danger text-white">
+        <tr>
+          <th scope="col">SQL ID</th>
+          <th scope="col">Query</th>
+          <th scope="col">Execution Time (ms)</th>
+          <th scope="col">Status</th>
+          <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let query of pagedQueries">
+          <td>{{ query.sql_id }}</td>
+          <td class="query-column">{{ query.sql_text }}</td>
+          <td>{{ query.elapsed_seconds }}</td>
+          <td>{{ query.executions }}</td>
+          <td>
+            <button class="btn btn-sm btn-success" (click)="optimizeQuery(query.sql_id)">
+              <i class="bi bi-gear"></i> Tune
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- Pagination -->
+      <div class="d-flex justify-content-center mt-4">
+        <button class="btn btn-sm btn-outline-secondary me-2" (click)="previousPage()" [disabled]="currentPage === 1">
+          Previous
+        </button>
+        <span class="mx-2">Page {{ currentPage }} / {{ totalPages }}</span>
+        <button class="btn btn-sm btn-outline-secondary ms-2" (click)="nextPage()" [disabled]="currentPage === totalPages">
+          Next
+        </button>
+      </div>
+      <div class="d-flex justify-content-center mt-2">
+        <button
+          *ngFor="let page of getPageNumbers()"
+          class="btn btn-sm"
+          [ngClass]="{'btn-danger': currentPage === page, 'btn-outline-secondary': currentPage !== page}"
+          (click)="goToPage(page)">
+          {{ page }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Fenêtre modale -->
+    <div class="modal" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="resultModalLabel">Optimization Report</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-
-          <div class="text-center">
-            <img src="assets/img/oracle-logo-3.png" alt="Oracle Logo" class="oracle-logo mb-4">
-          </div>
-
-          <p class="text-center">Manage optimization tasks by selecting a service below.</p>
-
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <button class="btn service-btn">
-                <i class="fas fa-rocket"></i> Optimize Database
-              </button>
-            </div>
-            <div class="col-md-4 mb-4">
-              <button class="btn service-btn">
-                <i class="fas fa-sync"></i> Reorganize Tables
-              </button>
-            </div>
-            <div class="col-md-4 mb-4">
-              <button class="btn service-btn">
-                <i class="fas fa-chart-pie"></i> Analyze Performance
-              </button>
-            </div>
+          <div class="modal-body">
+            <pre>{{ optimizationResult }}</pre>
           </div>
         </div>
       </div>
