@@ -1,50 +1,72 @@
 /* General Styling */
 .container-xxl {
   padding: 60px 0;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #ff6b6b, #f8f9fa);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
   background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  border: 1px solid #ff8cbb; /* Soft pink border for the card */
 }
 
 h2 {
-  color: #e32b2b; /* Oracle Red */
+  color: #ff8cbb; /* Soft pink */
   font-weight: bold;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 5px rgba(255, 140, 187, 0.2);
+}
+
+.form-floating {
+  margin-bottom: 1.8rem;
 }
 
 .form-control {
-  border-radius: 10px;
-  border: 2px solid #ddd;
+  border-radius: 20px;
+  border: 2px solid #ff8cbb;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  background-color: #f9f3fc; /* Soft lilac background */
 }
 
 .form-control:focus {
-  border-color: #e32b2b;
-  box-shadow: 0 0 5px rgba(227, 43, 43, 0.5);
+  border-color: #ff8cbb;
+  box-shadow: 0 0 8px rgba(255, 140, 187, 0.5);
+  background-color: #fff;
 }
 
 .btn-danger {
-  background-color: #e32b2b;
+  background-color: #ff8cbb;
   border: none;
   color: white;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 20px;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
 .btn-danger:hover {
-  background-color: #c52828;
+  background-color: #ff66a1;
+  transform: translateY(-3px);
 }
 
 .spinner {
   border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #e32b2b;
+  border-top: 4px solid #ff8cbb;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: spin 2s linear infinite;
+  width: 35px;
+  height: 35px;
+  animation: spin 1.5s linear infinite;
 }
 
 @keyframes spin {
@@ -54,13 +76,33 @@ h2 {
 
 /* Icon Styling */
 .fas {
-  margin-right: 10px;
-  font-size: 1.5rem;
-  color: #e32b2b;
+  margin-right: 12px;
+  font-size: 1.6rem;
+  color: #ff8cbb;
+  transition: color 0.3s ease;
 }
 
 .fas:hover {
   color: white;
+}
+
+/* Custom Alerts */
+.alert-container {
+  padding: 1.5rem;
+  border-radius: 20px;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.success-alert {
+  background-color: #e6f7e5;
+  color: #3c763d;
+}
+
+.error-alert {
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
 /* Responsive Styling */
@@ -92,11 +134,11 @@ h2 {
   }
 }
 
-
-
-.body
-{
-  background-color: #ffdbdb;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
+.body{
+  padding: 60px 0;
+  background: linear-gradient(135deg, #ff6b6b, #f8f9fa);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
