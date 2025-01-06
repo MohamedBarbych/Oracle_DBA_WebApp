@@ -72,21 +72,31 @@ export class CreateUserComponent implements OnInit {
       const { username, password, roles } = this.form.value;
 
       this.isLoading = true; // Show loading spinner
+      // setTimeout(() => {
+      //   this.alertVisible = false;
+      // }, 5000);
 
-      this.userService.createUser(username, password, roles).subscribe({
-        next: (response) => {
-          if (response === 'user created') {
+      // Ajout d'un délai avant de continuer
+      setTimeout(() => {
+
+        this.userService.createUser(username, password, roles).subscribe({
+
+          next: (response) => {
+            // if (response === 'user created') {
+              this.isLoading = false;
+              this.showAlert('User created successfully', 'success');
+              this.form.reset(); // Reset the form après succès
+            },
+          // },
+          error: () => {
             this.isLoading = false;
-            this.showAlert('User created successfully', 'success');
-            this.form.reset(); // Reset the form after successful creation
+            this.showAlert('Error creating the user', 'error');
           }
-        },
-        error: () => {
-          this.isLoading = false;
-          this.showAlert('Error creating the user', 'error');
-        }
-      });
+        });
+      }, 5000); // Temps d'attente en millisecondes (2 secondes)
+    }
   }
+
 
   // Method to create a new user
   // createNewUser(username: string, password: string, roles: string) {
@@ -103,5 +113,5 @@ export class CreateUserComponent implements OnInit {
   //       this.showAlert('Error creating the user', 'error');
   //     }
   //   });
-   }
+
 }

@@ -33,12 +33,12 @@ public class UserController {
                                              @RequestParam("roles") String roles) {
         try {
             if (username == null || username.isEmpty() || password == null || password.isEmpty()) {
-                return ResponseEntity.badRequest().body("Nom d'utilisateur et mot de passe sont obligatoires.");
+                return ResponseEntity.badRequest().build(); // Code 400 pour une requête invalide
             }
             userService.createUser(username, password, roles);
-            return ResponseEntity.ok("user created");
+            return ResponseEntity.ok().build(); // Code 200 pour succès
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erreur lors de la création de l'utilisateur : " + e.getMessage());
+            return ResponseEntity.status(500).build(); // Code 500 pour une erreur serveur
         }
     }
 
@@ -48,11 +48,11 @@ public class UserController {
                                              @RequestParam(value = "newRoles", required = false) String newRoles) {
         try {
             userService.updateUser(username, newPassword, newRoles);
-            return ResponseEntity.ok("user updated");
+            return ResponseEntity.ok().build();
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (RuntimeException e) {
-            return ResponseEntity.status(500).body("Erreur : " + e.getMessage());
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -60,12 +60,12 @@ public class UserController {
     public ResponseEntity<String> deleteUser(@RequestParam("username") String username) {
         try {
             if (username == null || username.isEmpty()) {
-                return ResponseEntity.badRequest().body("username is required");
+                return ResponseEntity.badRequest().build();
             }
             userService.deleteUser(username);
-            return ResponseEntity.ok("user deleted");
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erreur lors de la suppression de l'utilisateur : " + e.getMessage());
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -74,12 +74,12 @@ public class UserController {
         try {
             boolean exists = userService.getUser(username);
             if (exists) {
-                return ResponseEntity.ok("user exists");
+                return ResponseEntity.ok().build();
             } else {
-                return ResponseEntity.status(404).body("user does not exist");
+                return ResponseEntity.status(404).build();
             }
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erreur lors de la vérification de l'utilisateur : " + e.getMessage());
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -88,12 +88,12 @@ public class UserController {
                                                    @RequestParam("role") String role) {
         try {
             if (username == null || username.isEmpty() || role == null || role.isEmpty()) {
-                return ResponseEntity.badRequest().body("username and role are required");
+                return ResponseEntity.badRequest().build();
             }
             userService.assignRoleToUser(username, role);
-            return ResponseEntity.ok("role successfully assigned to user");
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erreur lors de l'attribution du rôle : " + e.getMessage());
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -102,12 +102,12 @@ public class UserController {
                                                @RequestParam("quota") int quota) {
         try {
             if (username == null || username.isEmpty()) {
-                return ResponseEntity.badRequest().body("username is required");
+                return ResponseEntity.badRequest().build();
             }
             userService.setUserQuota(username, quota);
-            return ResponseEntity.ok("Quota successfully set for user");
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erreur lors de la mise à jour du quota : " + e.getMessage());
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -136,15 +136,16 @@ public class UserController {
                                                           @RequestParam("sizeInMB") int sizeInMB) {
         try {
             if (tablespaceName == null || tablespaceName.isEmpty() || username == null || username.isEmpty() || sizeInMB <= 0) {
-                return ResponseEntity.badRequest().body("tablespace and user name and size are required");
+                return ResponseEntity.badRequest().build();
             }
 
             userService.createTablespaceForUser(tablespaceName, username, sizeInMB);
-            return ResponseEntity.ok("Tablespace successfully created for user");
+            return ResponseEntity.ok().build();
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().build();
         } catch (RuntimeException e) {
-            return ResponseEntity.status(500).body("Erreur lors de la création du tablespace : " + e.getMessage());
+            return ResponseEntity.status(500).build();
+
         }
     }
 

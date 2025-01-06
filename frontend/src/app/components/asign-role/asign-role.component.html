@@ -1,3 +1,7 @@
+
+<div class="body">
+
+
 <!-- assign-role.component.html -->
 <div class="container-xxl py-5">
   <div class="container">
@@ -18,15 +22,11 @@
             </div>
 
             <!-- Role Field -->
-            <div class="form-floating mb-3">
-              <select class="form-control" id="role" formControlName="role" name="role" required>
-                <option value="" disabled selected>Select Role</option>
-                <option value="admin">Admin</option>
-                <option value="user">User</option>
-                <option value="editor">Editor</option>
-              </select>
+         <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="role" placeholder="Role" formControlName="role" name="role" required>
               <label for="role"><i class="fas fa-user-shield me-2"></i>Role</label>
             </div>
+
 
             <!-- Submit Button -->
             <button type="submit" class="btn btn-danger w-100 py-3" [disabled]="isLoading">
@@ -43,4 +43,7 @@
       </div>
     </div>
   </div>
+</div>
+
+
 </div>

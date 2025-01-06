@@ -18,8 +18,8 @@ createUser(username: string, password: string, roles: string): Observable<any> {
 }
   // Method to update user information
   updateUser(username: string, newPassword: string, newRoles: string | null): Observable<any> {
-    const params = `?username=${username}&newPassword=${newPassword}&newRoles=${newRoles}`;
-    return this.http.put<any>(`${this.apiUrl}/update${params}`,{}); // PUT to /update
+    const updateData = { username, newPassword, newRoles };
+    return this.http.put<any>(`${this.apiUrl}/update`, updateData);  // PUT to /update
   }
 
   // Method to delete a user

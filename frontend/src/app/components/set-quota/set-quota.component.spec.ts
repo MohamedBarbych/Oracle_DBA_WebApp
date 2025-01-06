@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AssignRoleComponent } from './asign-role.component';
+import { SetQuotaComponent } from './set-quota.component';
 
-describe('AsignRoleComponent', () => {
-  let component: AssignRoleComponent;
-  let fixture: ComponentFixture<AssignRoleComponent>;
+describe('SetQuotaComponent', () => {
+  let component: SetQuotaComponent;
+  let fixture: ComponentFixture<SetQuotaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AssignRoleComponent]
+      imports: [SetQuotaComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AssignRoleComponent);
+    fixture = TestBed.createComponent(SetQuotaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

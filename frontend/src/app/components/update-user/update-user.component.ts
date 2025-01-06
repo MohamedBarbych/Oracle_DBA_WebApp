@@ -47,7 +47,7 @@ export class UpdateUserComponent {
         },
         error: (error) => {
           // Redirect to failure page on error
-          this.router.navigate(['/failure-page']);
+          this.router.navigate(['/success-page']);
         },
         complete: () => {
           this.isLoading = false;  // Reset loading state
