@@ -18,6 +18,7 @@ public class OptimizationController {
 
     // Endpoint pour optimiser une requête spécifique (par sql_id)
 
+
     @GetMapping("/optimize-query/{sqlId}")
     public String optimizeQuery(@PathVariable String sqlId) {
         // Créer une tâche de tuning
@@ -32,41 +33,47 @@ public class OptimizationController {
         return optimizedQuery; // Retourner la requête optimisée au client
     }
 
+
     @GetMapping("/slow-queries")
     public ResponseEntity<List<Map<String,Object>>> getSlowQueries() {
-        try {
-            List<Map<String,Object>> slowQueries = optimizationService.getSlowQueries();
-            return ResponseEntity.ok(slowQueries);
-        } catch (Exception e) {
-            return ResponseEntity.status(500).body(List.of(Map.of("Error", "Error fetching slow queries: " + e.getMessage())));
-        }
-    }
-}
-
 // endpoint pour recuperer les requetes lentes
-/*    @GetMapping("/slow-queries")
-    public ResponseEntity<List<Map<String,Object>>> getSlowQueries() {
         try{
             List<Map<String,Object>> slowQueries = optimizationService.getSlowQueries();
             return ResponseEntity.ok(slowQueries);
         }catch (Exception e){
             return ResponseEntity.status(500).body(List.of(Map.of("Error", "Error fetching slow queries: " + e.getMessage())));
         }
+
     }
 
+}
 
+
+/*    @GetMapping("/optimize-query/{sqlId}")
+    public ResponseEntity<Map<String, String>> optimizeQuery(@PathVariable String sqlId) {
+            try {
+            // Récupérer le rapport d'optimisation en tant que texte brut
+            String report = optimizationService.getOptimizationReport(sqlId);
+
+            // Retourner le rapport dans la réponse
+            return ResponseEntity.ok(Map.of("report", report));
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(Map.of("Error", "Error fetching optimization report: " + e.getMessage()));
+        }
+    }*/
 
     // Endpoint pour optimiser une requête spécifique (par sql_id)
 
-    @GetMapping("/optimize-query/{sqlId}")
-    public ResponseEntity<String> optimizeQuery(@PathVariable String sqlId) {
-        try {
-            String optimizedQuery = optimizationService.executeTuningTaskAndGetOptimizedQuery(sqlId);
-            return ResponseEntity.ok(optimizedQuery);
-        } catch (Exception e) {
-            return ResponseEntity.status(500).body("Error while optimizing query: " + e.getMessage());
-        }
-    }*/
+//    @GetMapping("/optimize-query/{sqlId}")
+//    public ResponseEntity<String> optimizeQuery(@PathVariable String sqlId) {
+//        try {
+//            String optimizedQuery = optimizationService.executeTuningTaskAndGetOptimizedQuery(sqlId);
+//            return ResponseEntity.ok(optimizedQuery);
+//        } catch (Exception e) {
+//            return ResponseEntity.status(500).body("Error while optimizing query: " + e.getMessage());
+//        }
+//    }*/
+
     /*
     public ResponseEntity<List<Map<String, Object>>> getRecommendations(@PathVariable String sqlId) {
         try {

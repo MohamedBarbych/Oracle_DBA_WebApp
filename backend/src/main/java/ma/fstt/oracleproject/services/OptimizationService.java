@@ -50,7 +50,7 @@ public class OptimizationService {
     }
 
     public String createTuningTask(String sqlId) {
-        String taskName = "Tuning_Taskkks_" + sqlId;
+        String taskName = "The_Tuning_Tasks_" + sqlId;
         String plsql = """
                 DECLARE
                   v_task_name VARCHAR2(30);
