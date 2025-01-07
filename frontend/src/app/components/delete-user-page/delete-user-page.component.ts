@@ -27,7 +27,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 ],
   styleUrls: ['./delete-user-page.component.css'],
   standalone: true,  // Standalone component flag
-  imports: [FormsModule, NavbarComponent] // Import FormsModule to support ngModel
   // Import FormsModule to support ngModel
 })
 export class DeleteUserPageComponent {
@@ -75,15 +74,22 @@ export class DeleteUserPageComponent {
 
       this.userService.deleteUser(this.username).subscribe({
         next: (response) => {
-          this.router.navigate(['/success-page']);
-        },
-        error: (error) => {
-          this.router.navigate(['/failure-page']);
-        },
-        complete: () => {
+          // if (response === 'user created') {
+            this.isLoading = false;
+            this.showAlert('User deleted successfully', 'success');
+            this.form.reset(); // Reset the form après succès
+          },
+        // },
+        error: () => {
+
+
+
           this.isLoading = false;
+          this.showAlert('Error deleting the user, Verify if the user already exists', 'error');
         }
+
       });
+
     }, 2000);
     }
   }

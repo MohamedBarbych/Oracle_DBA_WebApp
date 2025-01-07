@@ -85,7 +85,7 @@ export class UpdateUserComponent {
   }
 
 
-  ngAfterViewInit(): void {
+ngAfterViewInit(): void {
     // Initialize features after DOM is rendered
     this.initSpinner();
     this.initWOW();

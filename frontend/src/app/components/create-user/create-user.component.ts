@@ -39,6 +39,7 @@ export class CreateUserComponent implements OnInit {
   alertMessage: string = '';
   alertType: string = ''; // success or error
 
+
   constructor(
     private titleService: Title,
     private userService: UserService,

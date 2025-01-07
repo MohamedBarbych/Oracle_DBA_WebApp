@@ -1,60 +1,72 @@
-/* assign-role.component.css */
+/* General Styling */
 .container-xxl {
   padding: 60px 0;
-  margin-top: 90px;
+  background: linear-gradient(135deg, #ff6b6b, #f8f9fa);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
   background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   padding: 3rem;
-  position: relative;
+  border: 1px solid #ff8cbb; /* Soft pink border for the card */
 }
 
 h2 {
-  color: #e32b2b; /* Oracle Red */
+  color: #ff8cbb; /* Soft pink */
   font-weight: bold;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 5px rgba(255, 140, 187, 0.2);
 }
 
 .form-floating {
-  margin-bottom: 1rem;
+  margin-bottom: 1.8rem;
 }
 
 .form-control {
-  border: 2px solid #e32b2b;
-  border-radius: 5px;
+  border-radius: 20px;
+  border: 2px solid #ff8cbb;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  background-color: #f9f3fc; /* Soft lilac background */
 }
 
 .form-control:focus {
-  border-color: #c52828;
-  outline: none;
+  border-color: #ff8cbb;
+  box-shadow: 0 0 8px rgba(255, 140, 187, 0.5);
+  background-color: #fff;
 }
 
-button {
-  background-color: #e32b2b;
+.btn-danger {
+  background-color: #ff8cbb;
+  border: none;
   color: white;
   font-weight: bold;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 5px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 20px;
   width: 100%;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #c52828;
-  transform: translateY(-2px);
+.btn-danger:hover {
+  background-color: #ff66a1;
+  transform: translateY(-3px);
 }
 
 .spinner {
   border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #e32b2b;
+  border-top: 4px solid #ff8cbb;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: spin 2s linear infinite;
+  width: 35px;
+  height: 35px;
+  animation: spin 1.5s linear infinite;
 }
 
 @keyframes spin {
@@ -62,13 +74,71 @@ button:hover {
   100% { transform: rotate(360deg); }
 }
 
-
-.body
-{
-  background-color: #ffdbdb;
-  margin-bottom: 0px;
-  padding-bottom: 900px;
-
+/* Icon Styling */
+.fas {
+  margin-right: 12px;
+  font-size: 1.6rem;
+  color: #ff8cbb;
+  transition: color 0.3s ease;
 }
 
+.fas:hover {
+  color: white;
+}
 
+/* Custom Alerts */
+.alert-container {
+  padding: 1.5rem;
+  border-radius: 20px;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.success-alert {
+  background-color: #e6f7e5;
+  color: #3c763d;
+}
+
+.error-alert {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive Styling */
+@media (max-width: 991px) {
+  .container-xxl {
+    padding: 40px 0;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .card h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-xxl {
+    padding: 20px 0;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card h2 {
+    font-size: 1.8rem;
+  }
+}
+
+.body{
+  padding: 60px 0;
+  background: linear-gradient(135deg, #ff6b6b, #f8f9fa);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
