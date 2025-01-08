@@ -14,6 +14,7 @@ import { DeleteUserPageComponent } from './components/delete-user-page/delete-us
 import { UpdateUserComponent } from  './components/update-user/update-user.component';
 import { AssignRoleComponent } from './components/asign-role/asign-role.component';
 import { SetQuotaComponent } from './components/set-quota/set-quota.component';
+import { CreateTableSpaceComponent } from './components/create-table-space/create-table-space.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -36,6 +37,6 @@ export const routes: Routes = [
   { path:'delete-user',component: DeleteUserPageComponent },
   { path:'update-user',component: UpdateUserComponent },
   { path: 'asign-role',component: AssignRoleComponent },
-  { path: 'Set-Quota',component: SetQuotaComponent }
-
+  { path: 'Set-Quota',component: SetQuotaComponent },
+  { path: 'create-tablespace',component: CreateTableSpaceComponent }
 ];

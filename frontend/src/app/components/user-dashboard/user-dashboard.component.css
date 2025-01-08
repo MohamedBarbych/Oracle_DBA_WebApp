@@ -67,7 +67,7 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
 }/* Service Button Styling */
 .service-btn3 {
-  background-color: #d26dfa;
+  background-color: #ff0000;
   color: white;
   font-weight: bold;
   padding: 20px;
