@@ -1,0 +1,155 @@
+/* Styles from optimization component */
+table {
+  margin-top: 30px;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* ... (other styles) */
+
+thead {
+  background-color: #e32b2b;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for hover effects */
+}
+
+thead th {
+  padding: 15px;
+  /* Remove individual hover effect from th */
+}
+
+thead:hover{
+  transform: translateY(-5px);
+  cursor: pointer;
+  background-color: #c52828;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #f1f1f1;
+}
+
+tbody tr {
+  background-color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-5px);
+}
+tbody tr:hover td {
+  background-color: #f1f1f1;
+}
+/* ... (rest of the styles) */
+.btn-success, .btn-outline-danger {
+  border: 2px solid #e32b2b; /* Bordure plus épaisse et couleur principale */
+  color: #e32b2b;           /* Couleur du texte */
+  background-color: transparent; /* Fond transparent */
+  padding: 10px 20px;      /* Ajustement du padding */
+  border-radius: 8px;       /* Bords arrondis */
+  font-weight: 600;          /* Texte en gras */
+  transition: all 0.3s ease; /* Transition douce */
+}
+
+.btn-success:hover, .btn-outline-danger:hover {
+  background-color: #e32b2b;  /* Changement de couleur de fond au survol */
+  color: white;        /* Changement de couleur de texte au survol */
+  border-color: #c52828;
+  transform: translateY(-2px); /* Petit effet de déplacement */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+.btn-success:focus, .btn-outline-danger:focus {
+  outline: none; /* Supprimer l'outline au focus*/
+  box-shadow: 0 0 0 0.25rem rgba(227, 43, 43, 0.25); /* Ajout d'une petite ombre lors du focus */
+}
+
+.query-column {
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.spinner-border {
+  border-width: 6px;
+  border-top: 6px solid #e32b2b;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Styles from backup component (modified) */
+.backup-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backup-container h2 {
+  margin-bottom: 20px;
+}
+
+.button-container {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.loading-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #3498db; /* Keep the original spinner color */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite; /* Keep the original spinner speed */
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.success-message {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/*General styles*/
+.container-xxl{
+  margin-top: 50px;
+}
+.container{
+  width: 80%;
+}
+.text-danger{
+  color: #e32b2b !important;
+}
+.display-6{
+  font-size: 2.5rem;
+  font-weight: 600;
+}

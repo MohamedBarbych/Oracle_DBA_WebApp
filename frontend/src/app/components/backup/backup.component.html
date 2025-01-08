@@ -1,0 +1,59 @@
+<div class="container-xxl py-5">
+  <div class="container">
+    <h2 class="display-6 text-center text-danger mb-4">RMAN Backups Management</h2>
+
+    <div *ngIf="backupInProgress" class="loading-indicator">
+      Backup in progress... <div class="spinner"></div>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div class="button-container">
+        <button (click)="triggerFullBackup()" class="btn btn-outline-danger">Trigger Full Backup</button>
+        <button (click)="triggerIncrementalBackup()" class="btn btn-outline-danger">Trigger Incremental Backup</button>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="loading-indicator">
+      Loading History
+      <div class="spinner"></div>
+    </div>
+
+    <div *ngIf="backupHistory && backupHistory.length > 0">
+      <table class="table table-bordered table-striped">
+        <thead class="bg-danger text-white">
+        <tr>
+          <th>Type</th>
+          <th>Set Count</th>
+          <th>Start Time</th>
+          <th>Completion Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let backup of backupHistory">
+          <ng-container *ngIf="!backup.originalLine">
+            <td>{{ backup.type }}</td>
+            <td>{{ backup.setCount }}</td>
+            <td>{{ backup.startTime ? (backup.startTime | date:'yyyy-MM-dd HH:mm:ss') : 'N/A' }}</td>
+            <td>{{ backup.completionTime ? (backup.completionTime | date:'yyyy-MM-dd HH:mm:ss') : 'N/A' }}</td>
+          </ng-container>
+          <ng-container *ngIf="backup.originalLine">
+            <td colspan="4" class="query-column">Error: {{ backup.originalLine }}</td>
+          </ng-container>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="backupHistory && backupHistory.length === 0 && !loading">
+      <p>No backups found.</p>
+    </div>
+  </div>
+</div>
