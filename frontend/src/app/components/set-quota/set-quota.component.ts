@@ -80,17 +80,17 @@ export class SetQuotaComponent {
 
       setTimeout(() => {
 
-      this.userService.se(username,quota).subscribe({
+      this.userService.setUserQuota(username,quota).subscribe({
         next: (response) => {
           // if (response === 'user created') {
             this.isLoading = false;
-            this.showAlert('role asigned successfully', 'success');
+            this.showAlert('quota asigned successfully', 'success');
             this.form.reset(); // Reset the form après succès
           },
         // },
         error: () => {
           this.isLoading = false;
-          this.showAlert('Error asigning the role, Verify if the user already exists', 'error');
+          this.showAlert('Error asigning the quota, Verify if the user already exists', 'error');
         }
       });
     }, 2000);
