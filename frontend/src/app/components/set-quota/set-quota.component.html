@@ -1,1 +1,71 @@
-<p>set-quota works!</p>
+<div class="body">
+
+    <div>
+      <app-navbar></app-navbar>
+    </div>
+  <!-- assign-role.component.html -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="card p-4 p-sm-5 shadow wow fadeInUp">
+            <div class="text-center mb-4">
+              <h2 class="text-danger">Set Quota to User</h2>
+              <p class="text-muted">Enter username and set a quota to the user.</p>
+            </div>
+
+            <!-- Form to Assign role -->
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <!-- Username Field -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="Username"
+                  formControlName="username"
+                  required>
+                <label for="username"><i class="fas fa-user-edit me-2"></i>Username</label>
+              </div>
+
+              <!-- Roles Field -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="roles"
+                  placeholder="Roles"
+                  formControlName="roles"
+                  required>
+                <label for="quota"><i class="fas fa-users me-2"></i>Quota</label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-danger w-100 py-3" [disabled]="isLoading">
+                <i class="fas fa-sync-alt me-2"></i>Set Quota
+              </button>
+            </form>
+
+            <!-- Custom Alerts -->
+            <div
+              *ngIf="alertVisible"
+              [ngClass]="{'success-alert': alertType === 'success', 'error-alert': alertType === 'error'}"
+              class="alert-container mt-3">
+              {{ alertMessage }}
+            </div>
+
+            <!-- Loading Spinner -->
+            <div *ngIf="isLoading" class="text-center mt-3">
+              <div class="spinner-border text-danger" role="status"></div>
+              <p class="text-muted">Updating user...</p>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
