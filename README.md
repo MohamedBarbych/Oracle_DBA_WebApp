@@ -1,6 +1,10 @@
-# Oracle DBA WebApp
+# Application Web d'Administration Oracle 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ab877b52-7402-4f74-aa9f-ebcf5a85947f" alt="Oracle DBA" width="400"/>
+</p>
 
-![image](https://github.com/user-attachments/assets/ab877b52-7402-4f74-aa9f-ebcf5a85947f)
+## ✍️ Superviseur
+- Professeur Mohamed BEN AHMED
 
 
 ## 🌐🔧 Application Web d'Administration Oracle
@@ -25,31 +29,50 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
   - Surveillance des performances des requêtes SQL.
   - Conseils pour optimiser les temps de réponse des bases de données.
 
----  
+## 🏗️ Architecture du Projet
+![workflow_oracle](https://github.com/user-attachments/assets/8525f4e2-9645-41a1-ba4d-82fcb2a2cf97)
+
 
 ## 🛠️ **Technologies Utilisées**
 
-### **Frontend**
-- **Framework** : Angular 16
-- **Langages** : TypeScript, HTML5, SCSS
-- **Outils** :
-  - RxJS pour la gestion des données réactives.
-  - Angular CLI pour une configuration rapide.
+![Java](https://img.shields.io/badge/Java-17-blue)  
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1-green)  
+![Angular](https://img.shields.io/badge/Angular-16-red)  
+![Oracle Database](https://img.shields.io/badge/Oracle%20Database-21c-orange)  
+![Hibernate](https://img.shields.io/badge/Hibernate-ORM-brightgreen)
 
-### **Backend**
-- **Framework** : Spring Boot 3.1
-- **Langages** : Java
-- **Services** :
-  - API RESTful pour les opérations CRUD.
-  - Intégration avec Oracle Database.
+## 🗂️ Arborescence du Projet :
+```
+# 📁 Oracle_DBA_WebApp
+├── 📂 backend
+│   ├── 📂 src
+│   │   ├── 📂 main
+│   │   │   ├── 📂 java
+│   │   │   │   └── ma.fstt.oracleproject
+│   │   │   │       ├── 📂 controllers 
+│   │   │   │       ├── 📂 entities
+│   │   │   │       ├── 📂 services
+│   │   │   │       └── 📂 config
+│   │   │   └── 📂 resources
+│   └── 📄 pom.xml
+└── 📂 frontend
+    ├── 📂 src
+    │   └── 📂 app
+    └── 📄 angular.json
+```
 
-### **Base de Données**
-- **Technologie** : Oracle Database 21c
-- **Outils Additionnels** : PL/SQL pour des procédures et fonctions avancées.
-
----
 
 ## 🚀 **Déploiement Local**
+
+### **Prérequis**
+
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
+
+*   Java 17
+*   Maven
+*   Node.js et npm (ou yarn)
+*   Angular CLI (via `npm install -g @angular/cli`)
+*   Oracle Database 21c
 
 ### **Backend**
 ```bash
@@ -62,48 +85,16 @@ $ cd Oracle_DBA_WebApp/backend
 # Lancez l'application Spring Boot
 $ mvn spring-boot:run
 ```
+### **Frontend**
+```
+# Naviguez vers le dossier frontend
+$ cd Oracle_DBA_WebApp/frontend
 
-## **Rôle de chaque entité**
-- **User** 
+# Installez les dépendances
+$ npm install # Ou yarn install
 
-Représente un utilisateur du système, avec des informations comme le nom d'utilisateur, le mot de passe, les rôles attribués, et d'autres métadonnées comme la politique de mot de passe et le quota d'espace.
-Technique : C'est une entité principale pour la gestion des utilisateurs et des relations avec d'autres entités comme les rôles, les sauvegardes, et les audits.
-- **Role**
-
-Définit les rôles utilisateurs, comme "Admin", "User", ou "Viewer". Chaque rôle peut être attribué à plusieurs utilisateurs, établissant une relation many-to-many.
-Technique : Cette entité est essentielle pour la gestion des permissions et des droits d'accès.
-
-- **PerformanceMetrics**
-
-Capture les données de performance du système, telles que l'utilisation du CPU, de la mémoire, et des entrées/sorties disque à des moments spécifiques.
-Technique : Utile pour le suivi des performances et l'analyse des données historiques.
+# Lancez le serveur de développement Angular
+$ ng serve
+```
 
 
-
-## Structure du Projet
-
-### **Couche Entités (JPA)**  
-Les entités JPA modélisent les tables de la base de données et gèrent les relations entre les données via des annotations.  
-Elles servent à persister, lire et modifier les données directement dans la base.
-
-### **Couche DTO (Data Transfer Object)**  
-Les DTOs sont des objets légers utilisés pour transporter des données entre les couches de l'application ou vers des systèmes externes.  
-Ils permettent de sécuriser et d’optimiser les transferts en exposant uniquement les informations nécessaires.
-
-### **Couche Services**  
-La couche service contient la logique métier et gère les interactions entre les données et les contrôleurs.  
-Elle utilise les entités pour accéder à la base et les DTOs pour formater les données en sortie.
-
-### **Couche Contrôleurs (API)**  
-Les contrôleurs exposent les points d'accès RESTful pour les clients (frontend ou API).  
-Ils reçoivent les requêtes, délèguent la logique à la couche service, et renvoient des réponses formatées à l'aide des DTOs.
-
----
-  
-## Technologies Utilisées  
-- **Backend** : Java EE (Spring Boot)  
-- **ORM** : Hibernate  
-- **Base de Données** : Oracle Database  
-- **Frontend** : Angular ou React  
-- **Sécurité** : JAAS  
-- **API REST** : Spring Web  
