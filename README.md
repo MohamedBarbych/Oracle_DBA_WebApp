@@ -3,37 +3,67 @@
   <img src="https://github.com/user-attachments/assets/ab877b52-7402-4f74-aa9f-ebcf5a85947f" alt="Oracle DBA" width="400"/>
 </p>
 
-## ✍️ Superviseur
+## 📑 Table des matières
+1.  [Superviseur](#superviseur)
+2.  [Introduction](#application-web-dadministration-oracle)
+3.  [Fonctionnalités Principales](#fonctionnalités-principales)
+    *   [Page d'accueil](#page-daccueil)
+    *   [Tableau de bord](#tableau-de-bord)
+    *   [Gestion des Utilisateurs](#gestion-des-utilisateurs)
+    *   [Gestion des Performances](#gestion-des-performances)
+    *   [Sécurité](#sécurité)
+    *   [Gestion des Sauvegardes](#gestion-des-sauvegardes)
+    *   [Optimisation](#optimisation)
+4.  [Architecture du Projet](#architecture-du-projet)
+5.  [Technologies Utilisées](#technologies-utilisées)
+6.  [Arborescence du Projet](#arborescence-du-projet)
+7.  [Déploiement Local](#déploiement-local)
+    *  [Prérequis](#prérequis)
+    *  [Backend](#backend)
+    * [Frontend](#frontend)
+
+## ✍️ Superviseur <a name="superviseur"></a>
 - Professeur Mohamed BEN AHMED
 
-
-## 🌐🔧 Application Web d'Administration Oracle
+## 🌐🔧 Application Web d'Administration Oracle <a name="application-web-dadministration-oracle"></a>
 
 Une application puissante pour l'administration Oracle, conçue pour optimiser la gestion des utilisateurs, des sauvegardes, de la sécurité, et des performances.
 
-### **Fonctionnalités Principales**
-    
-- 🔒 **Gestion des Utilisateurs** :   
-  - Création, modification et suppression de comptes utilisateurs.
-  - Gestion des privilèges et des rôles utilisateurs.
+### **Fonctionnalités Principales** <a name="fonctionnalités-principales"></a>
 
-- 📂 **Gestion des Sauvegardes** :
-  - Planification automatique des sauvegardes.
-  - Suivi des sauvegardes et gestion des restaurations.
+- 🏠 **Page d'accueil** : <a name="page-daccueil"></a>
 
-- 🔐 **Sécurité** :
-  - Analyse des vulnérabilités.
-  - Configuration des politiques de sécurité pour bases de données sensibles.
+![image](https://github.com/user-attachments/assets/c00f8978-7e67-4252-8094-28148a236b32)
 
-- 📊 **Optimisation des Performances** :
-  - Surveillance des performances des requêtes SQL.
-  - Conseils pour optimiser les temps de réponse des bases de données.
+- 🗓️ **Tableau de bord** : <a name="tableau-de-bord"></a>
+  
+![image](https://github.com/user-attachments/assets/d53e1a67-2edf-4ca6-98ec-a4c308082c8a)
 
-## 🏗️ Architecture du Projet
+- 🔒 **Gestion des Utilisateurs** :   <a name="gestion-des-utilisateurs"></a>
+
+![image](https://github.com/user-attachments/assets/f02301cf-3228-40b9-965a-87bc10eac6fe)
+
+- 📊 **Gestion des Performances** : <a name="gestion-des-performances"></a>
+
+![image](https://github.com/user-attachments/assets/fbf83d67-316c-4753-a230-440498c74db6)
+
+- 🔐 **Sécurité** : <a name="sécurité"></a>
+
+![image](https://github.com/user-attachments/assets/e76e4851-1476-4dae-b190-e26ea92f5886)
+
+- 📂 **Gestion des Sauvegardes** : <a name="gestion-des-sauvegardes"></a>
+
+![image](https://github.com/user-attachments/assets/4896be96-a3d2-494f-bb06-d2d77635e5f8)
+
+- 📊 **Optimisation** : <a name="optimisation"></a>
+
+![image](https://github.com/user-attachments/assets/e027e5b7-bc04-4b07-abc8-d7a1adcaf868)
+
+## 🏗️ Architecture du Projet <a name="architecture-du-projet"></a>
 ![workflow_oracle](https://github.com/user-attachments/assets/8525f4e2-9645-41a1-ba4d-82fcb2a2cf97)
 
 
-## 🛠️ **Technologies Utilisées**
+## 🛠️ **Technologies Utilisées** <a name="technologies-utilisées"></a>
 
 ![Java](https://img.shields.io/badge/Java-17-blue)  
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1-green)  
@@ -41,7 +71,7 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
 ![Oracle Database](https://img.shields.io/badge/Oracle%20Database-21c-orange)  
 ![Hibernate](https://img.shields.io/badge/Hibernate-ORM-brightgreen)
 
-## 🗂️ Arborescence du Projet :
+## 🗂️ Arborescence du Projet : <a name="arborescence-du-projet"></a>
 ```
 # 📁 Oracle_DBA_WebApp
 ├── 📂 backend
@@ -62,9 +92,9 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
 ```
 
 
-## 🚀 **Déploiement Local**
+## 🚀 **Déploiement Local** <a name="déploiement-local"></a>
 
-### **Prérequis**
+### **Prérequis** <a name="prérequis"></a>
 
 Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 
@@ -74,7 +104,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 *   Angular CLI (via `npm install -g @angular/cli`)
 *   Oracle Database 21c
 
-### **Backend**
+### **Backend** <a name="backend"></a>
 ```bash
 # Clonez le dépôt
 $ git clone https://github.com/MohamedBarbych/Oracle_DBA_WebApp.git
@@ -85,7 +115,7 @@ $ cd Oracle_DBA_WebApp/backend
 # Lancez l'application Spring Boot
 $ mvn spring-boot:run
 ```
-### **Frontend**
+### **Frontend** <a name="frontend"></a>
 ```
 # Naviguez vers le dossier frontend
 $ cd Oracle_DBA_WebApp/frontend
@@ -96,5 +126,25 @@ $ npm install # Ou yarn install
 # Lancez le serveur de développement Angular
 $ ng serve
 ```
+## 🧑‍💻 Contributeurs
 
-
+<table align="center">
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="50%">
+        <a href="https://github.com/son-of-mountain" target="_blank">
+          <img src="https://avatars.githubusercontent.com/u/173689605?v=4" width="100px;" alt="Mouaad ELHANSALI" style="border-radius: 50%;"/>
+          <br />
+          <sub><b>Mouaad ELHANSALI</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="50%">
+        <a href="https://github.com/MohamedBarbych" target="_blank">
+          <img src="https://avatars.githubusercontent.com/u/146338565?v=4" width="100px;" alt="Mohamed BARBYCH" style="border-radius: 50%;"/>
+          <br />
+          <sub><b>Mohamed BARBYCH</b></sub>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
