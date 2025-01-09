@@ -1,0 +1,55 @@
+<div class="body">
+  <!-- Navbar -->
+  <app-navbar></app-navbar>
+
+  <div class="security-container">
+    <h2 class="title">Security Configuration</h2>
+
+    <div class="button-grid">
+      <div class="button-square" (click)="configureTDE()">
+        <img src="assets/img/tde.png" alt="TDE" class="button-image">
+        <i class="fas fa-shield-alt"></i>
+        <p>Configure TDE</p>
+      </div>
+
+      <div class="button-square" (click)="enableAudit()">
+        <img src="assets/img/audit.png" alt="Audit" class="button-image">
+        <i class="fas fa-user-secret"></i>
+        <p>Enable Audit</p>
+      </div>
+
+      <div class="button-square" (click)="createVPDPolicy()">
+        <img src="assets/img/vdp.png" alt="VPD Policy" class="button-image">
+        <i class="fas fa-lock"></i>
+        <p>Create VPD Policy</p>
+      </div>
+
+      <div class="button-square" (click)="createVPDPolicyFunction()">
+        <img src="assets/img/vdp-function.png" alt="VPD Policy Function" class="button-image">
+        <i class="fas fa-cogs"></i>
+        <p>Create VPD Function</p>
+      </div>
+    </div>
+
+    <!-- Alerts -->
+    <div
+      *ngIf="alertVisible"
+      [ngClass]="{
+        'alert-success': alertType === 'success',
+        'alert-danger': alertType === 'error'
+      }"
+      class="alert mt-4">
+      <i class="fas" [ngClass]="{
+        'fa-check-circle': alertType === 'success',
+        'fa-exclamation-circle': alertType === 'error'
+      }"></i>
+      {{ alertMessage }}
+    </div>
+
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoading" class="mt-4">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="text-muted mt-2">Processing...</p>
+    </div>
+  </div>
+</div>

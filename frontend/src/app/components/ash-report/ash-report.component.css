@@ -113,6 +113,11 @@ canvas {
   transition: color 0.3s ease;
 }
 
+#active{
+  color: #3498db;
+}
+
+
 .fas:hover {
   color: white;
 }

@@ -34,6 +34,9 @@
 .report-container {
   margin-top: 20px;
 }
+#active{
+  color: #3498db;
+}
 
 .report-container ul {
   list-style: none;

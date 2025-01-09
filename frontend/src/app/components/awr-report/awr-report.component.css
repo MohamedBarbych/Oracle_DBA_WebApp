@@ -206,6 +206,9 @@ canvas {
 .sidebar ul li a:hover {
   color: #3498db;
 }
+#active{
+  color: #3498db;
+}
 
 .content {
   flex: 1;

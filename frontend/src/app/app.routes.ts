@@ -19,6 +19,7 @@ import { PerformanceDashComponent } from './components/performance-dash/performa
 import { ResourceUsageComponent } from './components/resource-usage/resource-usage.component';
 import { ASHReportComponent } from './components/ash-report/ash-report.component';
 import { AwrReportComponent } from './components/awr-report/awr-report.component';
+import { SecurityComponent } from './components/security/security.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -46,5 +47,6 @@ export const routes: Routes = [
   { path: 'Performance-Dash',component: PerformanceDashComponent },
   { path:'Resource-Usage',component: ResourceUsageComponent },
   { path: 'ASH-Report',component: ASHReportComponent },
-  { path:'Awr-report',component: AwrReportComponent }
+  { path:'Awr-report',component: AwrReportComponent },
+  { path:'Security',component: SecurityComponent },
 ];
