@@ -15,7 +15,7 @@ public class PerformanceService {
 
     // Method to get AWR (Automatic Workload Repository) report
     public List<Map<String, Object>> getAWRReport() {
-        String sql = "SELECT * FROM DBA_HIST_SYSSTAT WHERE STAT_NAME = 'DB Time'";
+        String sql = "SELECT STAT_NAME, VALUE FROM V$SYS_TIME_MODEL WHERE STAT_NAME = 'DB time'";
         return jdbcTemplate.queryForList(sql);
     }
 
@@ -27,13 +27,25 @@ public class PerformanceService {
 
     // Method to get real-time resource usage (CPU, I/O, Memory)
     public List<Map<String, Object>> getResourceUsage() {
-        String sql = "SELECT * FROM V$SYSSTAT WHERE NAME IN ('CPU used by this session', 'Physical reads', 'Physical writes')";
+        String sql = """
+        SELECT * FROM V$SYSSTAT 
+        WHERE NAME IN (
+            'CPU used by this session', 
+            'Physical reads', 
+            'Physical writes',
+            'Redo size', 
+            'Logical reads',
+            'Memory usage'
+        )
+    """;
         return jdbcTemplate.queryForList(sql);
     }
+
 
     // Method to fetch real-time statistics from Oracle
     public List<Map<String, Object>> getRealtimeStats() {
         String sql = "SELECT * FROM V$SYSSTAT WHERE NAME IN ('User calls', 'DB time', 'Redo size')";
         return jdbcTemplate.queryForList(sql);
     }
+
 }

@@ -1,0 +1,65 @@
+<div class="body">
+  <!-- Navbar -->
+  <app-navbar></app-navbar>
+
+  <!-- Sidebar and Main Content -->
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h4>
+         Performance Dashboard  <i class="fas fa-tachometer-alt"></i>
+      </h4>
+      <nav>
+        <ul>
+          <li><a href="/Performance-Dash">Real-Time Stats <i class="fas fa-chart-line"></i> </a></li>
+          <li><a href="/Resource-Usage"> Resource Usage <i class="fas fa-server"></i></a></li>
+          <li><a href="/ASH-Report">ASH Report  <i class="fas fa-database"></i> </a></li>
+          <li><a href="/Awr-report"> AWR Report  <i class="fas fa-file-alt"></i></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="content">
+
+      <section id="ash-report" class="section">
+        <h2>ASH Report</h2>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>SAMPLE_ID</th>
+              <th>SAMPLE_TIME</th>
+              <th>SESSION_ID</th>
+              <th>SQL_OPNAME</th>
+              <th>SESSION_STATE</th>
+              <th>WAIT_TIME</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Ajout de la pagination avec slice automatique -->
+            <tr *ngFor="let ash of ashReport | paginate: { itemsPerPage: 8, currentPage: currentPage }">
+              <td>{{ ash.SAMPLE_ID }}</td>
+              <td>{{ ash.SAMPLE_TIME }}</td>
+              <td>{{ ash.SESSION_ID }}</td>
+              <td>{{ ash.SQL_OPNAME }}</td>
+              <td>{{ ash.SESSION_STATE }}</td>
+              <td>{{ ash.WAIT_TIME }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Contrôles de pagination -->
+        <pagination-controls
+          (pageChange)="currentPage = $event"
+          previousLabel="&laquo;"
+          nextLabel="&raquo;"
+        >
+        </pagination-controls>
+      </section>
+
+
+
+    </main>
+  </div>
+</div>

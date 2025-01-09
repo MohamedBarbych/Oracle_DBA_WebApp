@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins = "*") // Apply CORS globally to the controller
 @RestController
 @RequestMapping("/api/performance")
 public class PerformanceController {
@@ -22,7 +23,7 @@ public class PerformanceController {
             List<Map<String, Object>> awrReport = performanceService.getAWRReport();
             return ResponseEntity.ok(awrReport);
         } catch (Exception e) {
-            return ResponseEntity.status(500).body(List.of(Map.of("Error", "Error fetching AWR report: " + e.getMessage())));
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -33,7 +34,7 @@ public class PerformanceController {
             List<Map<String, Object>> ashReport = performanceService.getASHReport();
             return ResponseEntity.ok(ashReport);
         } catch (Exception e) {
-            return ResponseEntity.status(500).body(List.of(Map.of("Error", "Error fetching ASH report: " + e.getMessage())));
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -44,7 +45,7 @@ public class PerformanceController {
             List<Map<String, Object>> resourceUsage = performanceService.getResourceUsage();
             return ResponseEntity.ok(resourceUsage);
         } catch (Exception e) {
-            return ResponseEntity.status(500).body(List.of(Map.of("Error", "Error fetching resource usage data: " + e.getMessage())));
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -55,7 +56,7 @@ public class PerformanceController {
             List<Map<String, Object>> realtimeStats = performanceService.getRealtimeStats();
             return ResponseEntity.ok(realtimeStats);
         } catch (Exception e) {
-            return ResponseEntity.status(500).body(List.of(Map.of("Error", "Error fetching real-time stats: " + e.getMessage())));
+            return ResponseEntity.status(500).build();
         }
     }
 }

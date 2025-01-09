@@ -15,6 +15,10 @@ import { UpdateUserComponent } from  './components/update-user/update-user.compo
 import { AssignRoleComponent } from './components/asign-role/asign-role.component';
 import { SetQuotaComponent } from './components/set-quota/set-quota.component';
 import { CreateTableSpaceComponent } from './components/create-table-space/create-table-space.component';
+import { PerformanceDashComponent } from './components/performance-dash/performance-dash.component';
+import { ResourceUsageComponent } from './components/resource-usage/resource-usage.component';
+import { ASHReportComponent } from './components/ash-report/ash-report.component';
+import { AwrReportComponent } from './components/awr-report/awr-report.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -38,5 +42,9 @@ export const routes: Routes = [
   { path:'update-user',component: UpdateUserComponent },
   { path: 'asign-role',component: AssignRoleComponent },
   { path: 'Set-Quota',component: SetQuotaComponent },
-  { path: 'create-tablespace',component: CreateTableSpaceComponent }
+  { path: 'create-tablespace',component: CreateTableSpaceComponent },
+  { path: 'Performance-Dash',component: PerformanceDashComponent },
+  { path:'Resource-Usage',component: ResourceUsageComponent },
+  { path: 'ASH-Report',component: ASHReportComponent },
+  { path:'Awr-report',component: AwrReportComponent }
 ];

@@ -21,6 +21,8 @@ public class UnifiedSecurityConfig {
                     .requestMatchers("api/backup/**").permitAll()
                 // autorisations pour les endpoints de UserController
                     .requestMatchers("api/users/**").permitAll()
+                    // autorisations pour les endpoints de UserController
+                    .requestMatchers("api/performance/**").permitAll()
                 // autorisations pour les endpoints de OptimizationController
                     .requestMatchers("/api/optimization/**").permitAll()
                 // exige une authentification pour tous les autre endpoints
