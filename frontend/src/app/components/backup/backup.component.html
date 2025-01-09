@@ -3,7 +3,7 @@
     <h2 class="display-6 text-center text-danger mb-4">RMAN Backups Management</h2>
 
     <div *ngIf="backupInProgress" class="loading-indicator">
-      Backup in progress... <div class="spinner"></div>
+      Backup in progress... <div class="loading-spinner"></div>
     </div>
 
     <div *ngIf="errorMessage" class="error-message">
@@ -14,16 +14,29 @@
       {{ successMessage }}
     </div>
 
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex justify-content-center mb-4">
       <div class="button-container">
-        <button (click)="triggerFullBackup()" class="btn btn-outline-danger">Trigger Full Backup</button>
-        <button (click)="triggerIncrementalBackup()" class="btn btn-outline-danger">Trigger Incremental Backup</button>
+        <button
+          (click)="triggerFullBackup()"
+          class="btn btn-outline-danger me-3"
+          [disabled]="backupInProgress"
+          [ngClass]="{'disabled-button': backupInProgress}"
+        >
+          <i class="bi bi-check2-all me-2"></i> Trigger <span style="color:black;">Full</span> Backup
+        </button>
+        <button
+          (click)="triggerIncrementalBackup()"
+          class="btn btn-outline-danger"
+          [disabled]="backupInProgress"
+          [ngClass]="{'disabled-button': backupInProgress}"
+        >
+          <i class="bi bi-check2 me-2"></i> Trigger <span style="color:black;">Incremental</span> Backup
+        </button>
       </div>
     </div>
 
     <div *ngIf="loading" class="loading-indicator">
-      Loading History
-      <div class="spinner"></div>
+      Loading History <div class="loading-spinner"></div>
     </div>
 
     <div *ngIf="backupHistory && backupHistory.length > 0">
@@ -52,7 +65,7 @@
       </table>
     </div>
 
-    <div *ngIf="backupHistory && backupHistory.length === 0 && !loading">
+    <div *ngIf="backupHistory && backupHistory.length === 0 && !loading" class="no-backups">
       <p>No backups found.</p>
     </div>
   </div>

@@ -114,10 +114,22 @@ tbody tr:hover td {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-  font-style: italic;
+  margin-bottom: 20px; /* Increased margin */
 }
 
+.loading-spinner { /* New class for the styled spinner */
+  border: 8px solid #f3f3f3; /* Light grey border */
+  border-top: 8px solid #e32b2b; /* Red top border */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.5s linear infinite; /* Adjust animation speed if needed */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 .spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
   border-top: 4px solid #3498db; /* Keep the original spinner color */
@@ -152,4 +164,11 @@ tbody tr:hover td {
 .display-6{
   font-size: 2.5rem;
   font-weight: 600;
+}
+
+/* ... other styles */
+
+.disabled-button {
+  opacity: 0.6; /* Make the button slightly transparent */
+  cursor: not-allowed; /* Change the cursor to indicate it's disabled */
 }

@@ -1,6 +1,6 @@
 import {Component, Type} from '@angular/core';
 import {BackupService} from '../../services/backup.service';
-import {DatePipe, NgForOf, NgIf} from '@angular/common'; // Import DatePipe
+import {DatePipe, NgClass, NgForOf, NgIf} from '@angular/common'; // Import DatePipe
 
 
 interface BackupEntry{
@@ -15,7 +15,8 @@ interface BackupEntry{
   imports: [
     NgIf,
     NgForOf,
-    DatePipe
+    DatePipe,
+    NgClass
   ],
   templateUrl: './backup.component.html',
   styleUrl: './backup.component.css'
