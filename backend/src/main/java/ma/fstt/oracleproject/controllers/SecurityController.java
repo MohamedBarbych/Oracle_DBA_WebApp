@@ -18,9 +18,9 @@ public class SecurityController {
     public ResponseEntity<String> configureTDE(@RequestParam String walletPassword) {
         try {
             securityService.configureTDE(walletPassword);
-            return ResponseEntity.ok("TDE configured successfully.");
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Error configuring TDE: " + e.getMessage());
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -29,9 +29,9 @@ public class SecurityController {
     public ResponseEntity<String> enableSecurityAudit() {
         try {
             securityService.enableSecurityAudit();
-            return ResponseEntity.ok("Security audit enabled successfully.");
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Error enabling security audit: " + e.getMessage());
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -40,9 +40,9 @@ public class SecurityController {
     public ResponseEntity<String> createVPDPolicy() {
         try {
             securityService.createVPDPolicy();
-            return ResponseEntity.ok("VPD policy created successfully.");
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Error creating VPD policy: " + e.getMessage());
+            return ResponseEntity.status(500).build();
         }
     }
 
@@ -51,9 +51,10 @@ public class SecurityController {
     public ResponseEntity<String> createVPDPolicyFunction() {
         try {
             securityService.createVPDPolicyFunction();
-            return ResponseEntity.ok("VPD policy function created successfully.");
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Error creating VPD policy function: " + e.getMessage());
+            return ResponseEntity.status(500).build();
         }
-    }
-}
+       }
+ }
+

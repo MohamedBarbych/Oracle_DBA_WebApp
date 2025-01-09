@@ -1,0 +1,47 @@
+<div class="body">
+  <!-- Navbar -->
+  <app-navbar></app-navbar>
+
+  <!-- Sidebar and Main Content -->
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h4>
+         Performance Dashboard  <i class="fas fa-tachometer-alt"></i>
+      </h4>
+      <nav>
+        <ul>
+          <li><a href="/Performance-Dash">Real-Time Stats <i class="fas fa-chart-line"></i> </a></li>
+          <li><a id="active" href="/Resource-Usage"> Resource Usage <i class="fas fa-server"></i></a></li>
+          <li><a href="/ASH-Report">ASH Report  <i class="fas fa-database"></i> </a></li>
+          <li><a href="/Awr-report"> AWR Report  <i class="fas fa-file-alt"></i></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+
+      <!-- Resource Usage Chart -->
+      <section id="resource-usage" class="section">
+        <h2>Resource Usage</h2>
+        <div class="charts-container">
+          <!-- Existing Doughnut Chart -->
+          <div class="chart-wrapper">
+            <canvas id="resourceUsageChart"></canvas>
+            <p class="chart-description">Overview of resource usage (CPU, I/O, etc.).</p>
+          </div>
+
+          <!-- New Bar Chart for CPU Performance -->
+          <div class="chart-wrapper">
+            <canvas id="cpuPerformanceChart"></canvas>
+            <p class="chart-description">Detailed CPU performance breakdown.</p>
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+  </div>
+</div>

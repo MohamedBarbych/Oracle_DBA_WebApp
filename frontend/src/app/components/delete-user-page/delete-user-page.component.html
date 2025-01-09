@@ -1,3 +1,13 @@
+
+<div class="body">
+
+  <div>
+    <app-navbar></app-navbar>
+  </div>
+
+
+
+
 <div class="container-xxl py-5">
   <div class="container">
     <div class="row justify-content-center">
@@ -27,8 +37,16 @@
             <div class="spinner-border text-danger" role="status"></div>
             <p class="text-muted">Deleting user...</p>
           </div>
+
+          <!-- Custom Alerts -->
+          <div *ngIf="alertVisible" [ngClass]="{'success-alert': alertType === 'success', 'error-alert': alertType === 'error'}" class="alert-container">
+            {{ alertMessage }}
+          </div>
+          
         </div>
       </div>
     </div>
   </div>
+</div>
+
 </div>

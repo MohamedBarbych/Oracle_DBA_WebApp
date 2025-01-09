@@ -13,7 +13,7 @@ public class Cors {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 // ------ Allow requests from Angular frontend running on localhost:4200 -----
-                registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("GET", "POST", "PUT", "DELETE");
+                registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("GET", "POST", "PUT", "DELETE","OPTIONS");
             }
         };
     }

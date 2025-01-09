@@ -1,0 +1,38 @@
+<div class="body">
+  <!-- Navbar -->
+  <app-navbar></app-navbar>
+
+  <!-- Sidebar and Main Content -->
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h4>
+         Performance Dashboard  <i class="fas fa-tachometer-alt"></i>
+      </h4>
+      <nav>
+        <ul>
+          <li><a href="/Performance-Dash">Real-Time Stats <i class="fas fa-chart-line"></i> </a></li>
+          <li><a href="/Resource-Usage"> Resource Usage <i class="fas fa-server"></i></a></li>
+          <li><a href="/ASH-Report">ASH Report  <i class="fas fa-database"></i> </a></li>
+          <li><a id="active" href="/Awr-report"> AWR Report  <i class="fas fa-file-alt"></i></a></li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="content">
+
+
+       <section id="awr-report" class="section">
+        <h2>AWR Report</h2>
+        <div class="awr-realtime-container">
+          <h2>Real-Time AWR Report Tracking</h2>
+          <canvas id="awrRealtimeChart"></canvas>
+          <p class="chart-description">
+            The chart dynamically tracks DB Time values in real time.
+          </p>
+        </div>
+        >
+      </section>
+    </main>
+  </div>
+</div>
