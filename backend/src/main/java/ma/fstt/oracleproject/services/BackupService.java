@@ -32,7 +32,7 @@ public class BackupService {
         // calling the rman
         try{
             ProcessBuilder builder = new ProcessBuilder(
-                    "docker", "exec", "oracledb", "bash", "-c",
+                    "docker", "exec", "oracle-db", "bash", "-c",
                     "source /home/oracle/.bashrc && rman target / cmdfile=/home/oracle/full_backup.rman"
             );
 
@@ -67,7 +67,7 @@ public class BackupService {
     public void triggerIncrementalBackup() throws SQLException {
         try{
             ProcessBuilder builder = new ProcessBuilder(
-                    "docker", "exec", "oracledb", "bash", "-c",
+                    "docker", "exec", "oracle-db", "bash", "-c",
                     "source /home/oracle/.bashrc && rman target / cmdfile=/home/oracle/incremental_backup.rman"
             );
 
@@ -126,8 +126,6 @@ public class BackupService {
 
         return backupHistory;
     }
-
-
 
 
 }

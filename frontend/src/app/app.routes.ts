@@ -58,3 +58,12 @@ export const routes: Routes = [
   { path:'Awr-report',component: AwrReportComponent },
   { path:'Security',component: SecurityComponent }
 ];
+
+
+
+
+
+
+
+
+
