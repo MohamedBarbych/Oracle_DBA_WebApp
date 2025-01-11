@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { ParticulesComponent } from "../shared/particules/particules.component";
 
 @Component({
   selector: 'app-home-layout',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, CommonModule],
+  imports: [RouterOutlet, RouterModule, CommonModule, ParticulesComponent],
   templateUrl: './home-layout-component.component.html',
   styleUrls: ['./home-layout-component.component.css'],
 

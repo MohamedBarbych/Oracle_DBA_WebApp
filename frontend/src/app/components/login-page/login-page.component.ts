@@ -4,12 +4,13 @@ import { RouterOutlet, RouterModule } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ParticulesComponent } from '../shared/particules/particules.component';
+import { ParticulesComponentDash } from "../shared/particules-dash/particules-dash.component";
+// import { ParticulesComponent } from '../shared/particules/particules.component';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, CommonModule, ParticulesComponent],
+  imports: [RouterOutlet, RouterModule, CommonModule, ParticulesComponentDash],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })

@@ -2,17 +2,18 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgxParticlesModule } from '@tsparticles/angular';
 import { loadFull } from 'tsparticles';
 
-import particlesConfig from '/home/med/MyProjects/OracleProject/frontend/public/assets/particlesjs-config2.json';
+// Importation du fichier JSON
+import particlesConfig from '/home/med/MyProjects/OracleProject/frontend/public/assets/particlesjs-config.json';
 
 @Component({
-  selector: 'app-particules',
+  selector: 'app-particules-dash',
   standalone: true,
   imports: [NgxParticlesModule], // Correct module import
-  templateUrl: './particules.component.html',
-  styleUrls: ['./particules.component.css'],
+  templateUrl: './particules-dash.component.html',
+  styleUrls: ['./particules-dash.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ParticulesComponent implements OnInit {
+export class ParticulesComponentDash implements OnInit {
   id = 'particles-background'; // ID for the ngx-particles container
   particlesOptions: any = {}; // Options for particles
 

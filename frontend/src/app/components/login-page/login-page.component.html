@@ -1,5 +1,4 @@
-<!-- Particules Background -->
-<app-particules></app-particules>
+
 
 <!-- Spinner -->
 <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -33,48 +32,53 @@
 <!-- Navbar End -->
 
 
-<!-- Login Start -->
-<div class="container-xxl py-5 bg-light vh-100 d-flex align-items-center">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-5">
-        <div class="bg-white border rounded p-4 p-sm-5 shadow wow fadeInUp" data-wow-delay="0.3s">
-          <div class="text-center mb-4">
-            <h1 class="text-danger">Oracle DBA Login</h1>
-            <p class="text-muted">Access your Oracle DBA account</p>
-          </div>
-          <form (ngSubmit)="onSubmit()">
-            <!-- Email -->
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="email" placeholder="DbaOracle.com" required>
-              <label for="email"><i class="fas fa-envelope me-2"></i>Email</label>
+
+<div class = "body">
+  <!-- Particules Background -->
+<app-particules-dash></app-particules-dash>
+  <!-- Login Start -->
+  <div class="container-xxl py-5 bg-light vh-100 d-flex align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="bg-white border rounded p-4 p-sm-5 shadow wow fadeInUp" data-wow-delay="0.3s">
+            <div class="text-center mb-4">
+              <h1 class="text-danger">Oracle DBA Login</h1>
+              <p class="text-muted">Access your Oracle DBA account</p>
             </div>
-            <!-- Password -->
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="password" placeholder="Password" required>
-              <label for="password"><i class="fas fa-lock me-2"></i>Password</label>
-            </div>
-            <!-- Remember Me -->
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="rememberMe">
-                <label class="form-check-label" for="rememberMe">Remember Me</label>
+            <form (ngSubmit)="onSubmit()">
+              <!-- Email -->
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" placeholder="DbaOracle.com" required>
+                <label for="email"><i class="fas fa-envelope me-2"></i>Email</label>
               </div>
-              <a href="#" class="text-danger">Forgot Password?</a>
+              <!-- Password -->
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                <label for="password"><i class="fas fa-lock me-2"></i>Password</label>
+              </div>
+              <!-- Remember Me -->
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="rememberMe">
+                  <label class="form-check-label" for="rememberMe">Remember Me</label>
+                </div>
+                <a href="#" class="text-danger">Forgot Password?</a>
+              </div>
+              <!-- Login Button -->
+              <a routerLink="/admin-dashboard">
+              <button type="submit" class="btn btn-danger w-100 py-3">
+                <i class="fas fa-sign-in-alt me-2"></i>Login
+              </button>
+              </a>
+            </form>
+            <hr class="my-4">
+            <!-- Register Link -->
+            <div class="text-center">
+              <p class="mb-0">Don’t have an account?
+                <a href="/register" class="text-danger fw-bold">Register Now</a>
+              </p>
             </div>
-            <!-- Login Button -->
-             <a routerLink="/admin-dashboard">
-            <button type="submit" class="btn btn-danger w-100 py-3">
-              <i class="fas fa-sign-in-alt me-2"></i>Login
-            </button>
-            </a>
-          </form>
-          <hr class="my-4">
-          <!-- Register Link -->
-          <div class="text-center">
-            <p class="mb-0">Don’t have an account?
-              <a href="/register" class="text-danger fw-bold">Register Now</a>
-            </p>
           </div>
         </div>
       </div>

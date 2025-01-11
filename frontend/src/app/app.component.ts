@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
+import { TestParticlesComponent } from "./test-particles/test-particles.component";
+import { ParticulesComponent } from "./components/shared/particules/particules.component";
 
 @Component({
   selector: 'app-root',

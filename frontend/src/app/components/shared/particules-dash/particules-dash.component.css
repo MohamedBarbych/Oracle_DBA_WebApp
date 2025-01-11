@@ -1,0 +1,9 @@
+#particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 14545454; /* Ensure particles are in the background */
+  pointer-events: none; /* Prevent interaction with particles */
+}
