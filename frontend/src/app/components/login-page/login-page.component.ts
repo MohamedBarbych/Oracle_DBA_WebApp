@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, CommonModule],
+  imports: [RouterOutlet, RouterModule, CommonModule, ParticulesComponent],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })

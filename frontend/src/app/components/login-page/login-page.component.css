@@ -163,3 +163,29 @@
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
+
+
+
+/* Fullscreen particles background */
+#tsparticles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Keep it behind all other content */
+}
+
+/* Remove body margins and paddings */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure the spinner and login form are positioned correctly */
+.container-xxl {
+  z-index: 10;
+  position: relative;
+}
