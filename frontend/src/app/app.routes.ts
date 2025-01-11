@@ -22,6 +22,7 @@ import { ResourceUsageComponent } from './components/resource-usage/resource-usa
 import { ASHReportComponent } from './components/ash-report/ash-report.component';
 import { AwrReportComponent } from './components/awr-report/awr-report.component';
 import { SecurityComponent } from './components/security/security.component';
+import { ParticulesComponent } from './components/shared/particules/particules.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -56,7 +57,9 @@ export const routes: Routes = [
   { path:'Resource-Usage',component: ResourceUsageComponent },
   { path: 'ASH-Report',component: ASHReportComponent },
   { path:'Awr-report',component: AwrReportComponent },
-  { path:'Security',component: SecurityComponent }
+  { path:'Security',component: SecurityComponent },
+
+  // { path:'/particules',component: ParticulesComponent }
 ];
 
 

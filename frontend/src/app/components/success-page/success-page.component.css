@@ -1,64 +1,192 @@
-/* General Styling for the Page */
+/* Center Form Vertically */
 .container-xxl {
-  padding: 60px 0;
-  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent; /* Transparent to let particles show */
+  z-index: 10; /* Above particles, below spinner */
+  position: relative;
 }
 
-.card {
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+/* Form Styling */
+.form-control {
+  border: 2px solid #ddd;
+  border-radius: 10px;
 }
 
-h2 {
-  color: #28a745; /* Green for success */
+.form-control:focus {
+  border-color: #e32b2b;
+  box-shadow: 0px 0px 5px rgba(227, 43, 43, 0.5);
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, #e32b2b, #c52828);
+  border: none;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(45deg, #c52828, #a02424);
+}
+
+/* Shadow for Form */
+.shadow {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar Background and Shadow */
+.navbar.bg-white {
+  background-color: rgba(255, 255, 255, 0.9) !important; /* Slightly transparent */
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Active Link Styling */
+.navbar-nav .nav-link.active {
+  color: #e32b2b !important;
   font-weight: bold;
 }
 
-.alert {
-  padding: 15px;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  background-color: #d4edda;
-  color: #155724;
+/* Adjust Button and Link Colors */
+.navbar .btn-danger {
+  background: linear-gradient(45deg, #e32b2b, #c52828);
+  border: none;
 }
 
-.btn-success {
-  background-color: #28a745;
-  color: white;
-  font-weight: bold;
-  padding: 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+.navbar .btn-danger:hover {
+  background: linear-gradient(45deg, #c52828, #a02424);
 }
 
-.btn-success:hover {
-  background-color: #218838;
+.navbar .btn-light {
+  background-color: rgba(248, 249, 250, 0.8) !important; /* Slightly transparent */
+  border-color: #e9ecef !important;
 }
 
-/* Icon Styling */
-i {
-  font-size: 5rem;
+.navbar .btn-light:hover {
+  background-color: #e9ecef !important;
+}
+
+/* Existing Navbar Logos */
+.navbar-brand img.owl-logo {
+  height: 70px;
+  width: 130px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.navbar-brand img.owl-logo2 {
+  height: 30px;
+  width: 50px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* Buttons */
+.navbar .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .btn-outline-danger {
+  color: #e32b2b;
+  border: 1px solid #e32b2b;
+  background-color: transparent;
+}
+
+.navbar .btn-outline-danger:hover {
+  background-color: #e32b2b;
+  color: #ffffff;
+}
+
+.navbar .btn-danger {
+  background: linear-gradient(45deg, #e32b2b, #c52828);
+  color: #ffffff;
+  border: none;
+}
+
+.navbar .btn-danger:hover {
+  background: linear-gradient(45deg, #c52828, #a02424);
+}
+
+/* Social Media Icons */
+.navbar .btn-light {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+.navbar .btn-light:hover {
+  background-color: #e9ecef;
 }
 
 /* Responsive Styling */
 @media (max-width: 991px) {
-  .container-xxl {
-    padding: 40px 0;
+  .navbar {
+    padding: 1rem;
   }
 
-  .card {
-    padding: 2rem;
+  .navbar .btn-outline-danger,
+  .navbar .btn-danger {
+    width: 100%;
+    margin-bottom: 0.5rem;
   }
 
-  .card h2 {
-    font-size: 2rem;
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar .btn-light {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-brand img.owl-logo {
+    height: 50px;
+    width: 130px;
+  }
+
+  .navbar-brand img.owl-logo2 {
+    height: 70px;
+    width: 130px;
   }
 }
 
-@media (max-width: 576px) {
-  .btn-success {
-    padding: 12px 20px;
-  }
+/* Fullscreen Particles Background */
+#particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Keep particles in the background */
+  pointer-events: none; /* Prevent interaction with particles */
+}
+
+/* Remove Body Margins and Paddings */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent; /* Ensure no background color conflicts */
+}
+
+/* Spinner Layer */
+#spinner {
+  z-index: 11; /* Ensure above particles */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -4,6 +4,7 @@ import { RouterOutlet, RouterModule } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ParticulesComponent } from '../shared/particules/particules.component';
 
 @Component({
   selector: 'app-login-page',

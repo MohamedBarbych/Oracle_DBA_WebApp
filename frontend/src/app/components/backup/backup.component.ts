@@ -1,6 +1,7 @@
 import {Component, Type} from '@angular/core';
 import {BackupService} from '../../services/backup.service';
 import {DatePipe, NgClass, NgForOf, NgIf} from '@angular/common'; // Import DatePipe
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 
 interface BackupEntry{
@@ -13,6 +14,7 @@ interface BackupEntry{
 @Component({
   selector: 'app-backup',
   imports: [
+    NavbarComponent,
     NgIf,
     NgForOf,
     DatePipe,
