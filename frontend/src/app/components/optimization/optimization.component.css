@@ -1,11 +1,16 @@
+.body{
+  margin-top: 90px;
+
+}
 /* Tableau - Ajout d'une apparence plus sophistiquée */
 table {
   margin-top: 30px;
   border-collapse: collapse;
   width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Style des en-têtes du tableau */
 /* Style des en-têtes du tableau */
 thead {
   background-color: #e32b2b;
@@ -14,21 +19,26 @@ thead {
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center; /* Aligne le texte horizontalement au centre */
 }
-
 
 thead th {
   padding: 15px;
-  transition: transform 0.3s ease;  /* Transition pour le mouvement */
+  vertical-align: middle; /* Aligne le texte verticalement au centre */
+  text-align: center; /* Aligne le texte horizontalement au centre */
 }
 
-thead th:hover {
-  transform: translateY(-5px); /* Effet de mouvement au survol */
-  cursor: pointer;    /* Changer le curseur en main */
+thead:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  background-color: #c52828;
 }
+
+
 th, td {
   padding: 15px;
-  text-align: left;
+  text-align: center;
   border: 1px solid #f1f1f1;
 }
 
@@ -177,4 +187,31 @@ button:hover {
 .btn-outline-danger:focus {
   outline: none; /* Supprimer l'outline au focus*/
   box-shadow: 0 0 0 0.25rem rgba(227, 43, 43, 0.25); /* Ajout d'une petite ombre lors du focus */
+}
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space between buttons */
+  margin-top: 20px;
+}
+
+.pagination-buttons button {
+  padding: 10px 15px;
+  border: 1px solid #e32b2b;
+  background-color: #ffffff;
+  color: #e32b2b;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-buttons button.active {
+  background-color: #e32b2b;
+  color: #ffffff;
+  border-color: #e32b2b;
+}
+
+.pagination-buttons button:hover {
+  background-color: #c67d7d;
+  color: #ffffff;
 }
