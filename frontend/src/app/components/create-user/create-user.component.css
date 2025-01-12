@@ -187,3 +187,90 @@ button.mat-raised-button:hover {
     transform: translateY(0);
   }
 }
+
+
+
+/* Sidebar Styling */
+.sidebar {
+  flex: 0 0 200px;
+  background-color: #e32b2b; /* Oracle Red */
+  color: #ffffff; /* White Text */
+  padding-top: 100px;
+  height: 100vh;
+  padding-bottom: 100px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h4 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #ffffff; /* Keep white for better contrast */
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  color: #ffd700; /* Gold Icons */
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #ffdbdb; /* Lightened Red */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar ul li a:hover i {
+  color: #ffffff; /* Highlight icons on hover */
+}
+
+/* Active Link Styling */
+.sidebar ul li a#active {
+  background-color: #ffdbdb;
+  color: #e32b2b;
+  font-weight: bold;
+}
+
+.sidebar ul li a#active i {
+  color: #e32b2b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    flex: 0 0 180px;
+    padding-top: 80px;
+  }
+
+  .sidebar h4 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar ul li a {
+    font-size: 1rem;
+  }
+}

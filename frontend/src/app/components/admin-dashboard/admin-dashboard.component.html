@@ -1,38 +1,38 @@
 <div class="body">
 
-<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-  <div class="spinner-border text-danger" role="status" style="width: 3rem; height: 3rem;"></div>
-</div>
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-danger" role="status" style="width: 3rem; height: 3rem;"></div>
+  </div>
 
-<!-- Navbar Start -->
-<div class="container-fluid fixed-top px-0">
-  <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
-    <a href="#" class="navbar-brand ms-4 ms-lg-0">
-      <h1 class="display-5 text-danger m-0 d-inline-block">Oracle DBA Platform</h1>
-      <img class="owl-logo d-inline-block" src="assets/img/oracle-logo.png" alt="Oracle Logo">
-    </a>
+  <!-- Navbar Start -->
+  <div class="container-fluid fixed-top px-0">
+    <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
+      <a href="#" class="navbar-brand ms-4 ms-lg-0">
+        <h1 class="display-5 text-danger m-0 d-inline-block">Oracle DBA Platform</h1>
+        <img class="owl-logo d-inline-block" src="assets/img/oracle-logo.png" alt="Oracle Logo">
+      </a>
 
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav ms-auto p-4 p-lg-0">
-        <a href="#" class="nav-itemSP nav-link active">Admin </a>
-        <a href="#about" class="nav-item nav-link">About</a>
-        <a href="#services" class="nav-item nav-link">Services</a>
-        <a href="#contact" class="nav-item nav-link">Contact</a>
+      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="/admin-dashboard" class="nav-itemSP nav-link active">Admin </a>
+          <a href="#about" class="nav-item nav-link">About</a>
+          <a href="#services" class="nav-item nav-link">Services</a>
+          <a href="#contact" class="nav-item nav-link">Contact</a>
+        </div>
+        <div class="d-none d-lg-flex align-items-center">
+            <!-- Logout Button -->
+            <a href="/" class="btn btn-outline-danger btn-sm rounded-pill mx-2 d-flex align-items-center">
+              <i class="fas fa-sign-in-alt me-2"></i> Logout
+            </a>
+
+        </div>
       </div>
-      <div class="d-none d-lg-flex align-items-center">
-          <!-- Logout Button -->
-          <a href="/" class="btn btn-outline-danger btn-sm rounded-pill mx-2 d-flex align-items-center">
-            <i class="fas fa-sign-in-alt me-2"></i> Logout
-          </a>
-
-      </div>
-    </div>
-  </nav>
-</div>
-<!-- Navbar End -->
+    </nav>
+  </div>
+  <!-- Navbar End -->
 
 
 
@@ -41,59 +41,63 @@
 
 
 
-<div class="container-xxl py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card p-5 wow fadeInUp">
-          <div class="header d-flex justify-content-between align-items-center mb-4">
-            <h2 class="display-6 text-center text-danger">Admin Dashboard</h2>
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card p-5 wow fadeInUp">
+            <div class="header d-flex justify-content-between align-items-center mb-4">
+              <h2 class="display-6 text-center text-danger">Admin Dashboard</h2>
 
-          </div>
-
-          <div class="text-center">
-            <img src="assets/img/oracle-logo-2.png" alt="Oracle Logo" class="oracle-logo mb-4">
-          </div>
-
-          <p class="text-center">Manage services below by clicking the respective service buttons.</p>
-
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <button routerLink="/backup" class="btn service-btn">
-                <i class="fas fa-database"></i> Backup Service
-              </button>
             </div>
-            <div class="col-md-4 mb-4">
-              <button class="btn service-btn">
-                <i class="fas fa-cogs"></i> High Availability
-              </button>
+
+            <div class="text-center">
+              <img src="assets/img/oracle-logo-2.png" alt="Oracle Logo" class="oracle-logo mb-4">
             </div>
-            <div class="col-md-4 mb-4">
-              <button routerLink="/optimization" class="btn service-btn">
-                <i class="fas fa-tools"></i> Optimization
-              </button>
-            </div>
-            <div class="col-md-4 mb-4">
-              <button routerLink="/Performance-Dash" class="btn service-btn">
-                <i class="fas fa-chart-line"></i> Performance
-              </button>
-            </div>
-            <div class="col-md-4 mb-4">
-              <button routerLink="/Security" class="btn service-btn">
-                <i class="fas fa-shield-alt"></i> Security Service
-              </button>
-            </div>
-            <div class="col-md-4 mb-4">
-              <button routerLink="/user-management" class="btn service-btn">
-                <i class="fas fa-users"></i> User Service
-              </button>
+
+            <p class="text-center">Manage services below by clicking the respective service buttons.</p>
+
+            <div class="row">
+
+              <div class="col-md-4 mb-4">
+                <button routerLink="/user-management" class="btn service-btn">
+                  <i class="fas fa-users"></i> User Service
+                </button>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <button routerLink="/Performance-Dash" class="btn service-btn">
+                  <i class="fas fa-chart-line"></i> Performance
+                </button>
+              </div>
+              <div class="col-md-4 mb-4">
+                <button routerLink="/Security" class="btn service-btn">
+                  <i class="fas fa-shield-alt"></i> Security Service
+                </button>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <button routerLink="/backup" class="btn service-btn">
+                  <i class="fas fa-database"></i> Backup Service
+                </button>
+              </div>
+              <div class="col-md-4 mb-4">
+                <button class="btn service-btn">
+                  <i class="fas fa-cogs"></i> High Availability
+                </button>
+              </div>
+              <div class="col-md-4 mb-4">
+                <button routerLink="/optimization" class="btn service-btn">
+                  <i class="fas fa-tools"></i> Optimization
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 
-</div>
+  </div>
