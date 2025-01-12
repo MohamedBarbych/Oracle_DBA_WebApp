@@ -71,7 +71,7 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
 
 ![Java](https://img.shields.io/badge/Java-17-blue)  
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1-green)  
-![Angular](https://img.shields.io/badge/Angular-16-red)  
+![Angular](https://img.shields.io/badge/Angular-19-red)  
 ![Oracle Database](https://img.shields.io/badge/Oracle%20Database-21c-orange)  
 ![Hibernate](https://img.shields.io/badge/Hibernate-ORM-brightgreen)
 
