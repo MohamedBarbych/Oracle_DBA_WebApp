@@ -59,6 +59,10 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
 
 ![image](https://github.com/user-attachments/assets/e027e5b7-bc04-4b07-abc8-d7a1adcaf868)
 
+- 🔒 **Users Management Example** : <a name="Users Management Example"></a>
+![image](https://github.com/user-attachments/assets/5d98f021-3401-420b-8c8a-c8387dd4e3f6)
+
+
 ## 🏗️ Architecture du Projet <a name="architecture-du-projet"></a>
 ![workflow_oracle](https://github.com/user-attachments/assets/8525f4e2-9645-41a1-ba4d-82fcb2a2cf97)
 
