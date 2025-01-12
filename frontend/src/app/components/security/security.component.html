@@ -32,6 +32,42 @@
       </div>
     </div>
 
+
+    <!-- Alerts -->
+    <div
+    *ngIf="alertVisible"
+    [ngClass]="{
+      'alert-success': alertType === 'success',
+      'alert-danger': alertType === 'error'
+    }"
+    class="alert mt-4">
+    <i class="fas" [ngClass]="{
+      'fa-check-circle': alertType === 'success',
+      'fa-exclamation-circle': alertType === 'error'
+    }"></i>
+    {{ alertMessage }}
+    </div>
+
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoading" class="mt-4">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="text-muted mt-2">Processing...</p>
+    </div>
+
+
+    <div class="chart-section">
+      <h2 class="chart-title">Security Statistics</h2>
+      <div class="chart-container">
+        <div class="chart-wrapper">
+          <canvas id="chart1"></canvas>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="chart2"></canvas>
+        </div>
+      </div>
+    </div>
+
+
     <!-- Security Statistics Section -->
     <div class="stats-section">
       <h3 class="stats-title">Security Overview</h3>
@@ -51,25 +87,6 @@
       </div>
     </div>
 
-    <!-- Alerts -->
-    <div
-      *ngIf="alertVisible"
-      [ngClass]="{
-        'alert-success': alertType === 'success',
-        'alert-danger': alertType === 'error'
-      }"
-      class="alert mt-4">
-      <i class="fas" [ngClass]="{
-        'fa-check-circle': alertType === 'success',
-        'fa-exclamation-circle': alertType === 'error'
-      }"></i>
-      {{ alertMessage }}
-    </div>
 
-    <!-- Loading Spinner -->
-    <div *ngIf="isLoading" class="mt-4">
-      <div class="spinner-border text-primary" role="status"></div>
-      <p class="text-muted mt-2">Processing...</p>
-    </div>
   </div>
 </div>

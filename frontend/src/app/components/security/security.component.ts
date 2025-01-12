@@ -77,7 +77,37 @@ export class SecurityComponent {
   }
 
 
+  initializeCharts() {
+    const chart1 = new Chart('chart1', {
+      type: 'doughnut',
+      data: {
+        labels: ['TDE', 'Audit', 'VPD Policy'],
+        datasets: [
+          {
+            data: [50, 30, 20],
+            backgroundColor: ['#e32b2b', '#f7b731', '#45aaf2'],
+            hoverBackgroundColor: ['#c52828', '#e1a324', '#3c97d1']
+          }
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
 
+    const chart2 = new Chart('chart2', {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar'],
+        datasets: [
+          {
+            label: 'Security Events',
+            data: [120, 150, 180],
+            backgroundColor: '#e32b2b'
+          }
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+  }
 
   showAlert(message: string, type: string) {
     this.alertMessage = message;
@@ -172,6 +202,8 @@ export class SecurityComponent {
 
   ngAfterViewInit(): void {
     // Initialize features after DOM is rendered
+    this.initializeCharts();
+
         this.initCharts();
     this.initSpinner();
     this.initWOW();
