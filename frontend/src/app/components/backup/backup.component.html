@@ -24,7 +24,7 @@
           [disabled]="backupInProgress"
           [ngClass]="{'disabled-button': backupInProgress}"
         >
-          <i class="bi bi-check2-all me-2"></i> Trigger <span style="color:black;">Full</span> Backup
+          <i class="bi bi-floppy-fill me-2"></i> <span style="color:black;">Full</span>
         </button>
         <button
           (click)="triggerIncrementalBackup()"
@@ -32,7 +32,7 @@
           [disabled]="backupInProgress"
           [ngClass]="{'disabled-button': backupInProgress}"
         >
-          <i class="bi bi-check2 me-2"></i> Trigger <span style="color:black;">Incremental</span> Backup
+          <i class="bi bi-cloud-download-fill me-2"></i><span style="color:black;">Incremental</span>
         </button>
       </div>
     </div>

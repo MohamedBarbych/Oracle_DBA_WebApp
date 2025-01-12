@@ -17,20 +17,20 @@ public class BackupService {
     private DataSource dataSource;
 
     public void triggerFullBackup() throws SQLException {
-        // before calling the rman
+//         before calling the rman
 
-        //        String sql = "BACKUP DATABASE";
-        //        try(Connection connection = dataSource.getConnection();
-        //            Statement statement = connection.createStatement()){
-        //            statement.execute(sql);
-        //        }catch (SQLException e){
-        //            e.printStackTrace();
-        //            throw new SQLException("Error in triggerFullBackup");
-        //        }
+                String sql = "BACKUP DATABASE";
+                try(Connection connection = dataSource.getConnection();
+                    Statement statement = connection.createStatement()){
+                    statement.execute(sql);
+                }catch (SQLException e){
+                    e.printStackTrace();
+                    throw new SQLException("Error in triggerFullBackup");
+                }
 
 
         // calling the rman
-        try{
+        try {
             ProcessBuilder builder = new ProcessBuilder(
                     "docker", "exec", "oracle-db", "bash", "-c",
                     "source /home/oracle/.bashrc && rman target / cmdfile=/home/oracle/full_backup.rman"
@@ -45,18 +45,17 @@ public class BackupService {
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
-            while((line = reader.readLine()) != null){
+            while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
 
             int exitCode = process.waitFor();
-            if(exitCode == 0){
+            if (exitCode == 0) {
                 System.out.println("Backup completed successfully");
-            }
-            else{
+            } else {
                 System.out.println("Backup failed");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
 
         }
@@ -65,7 +64,7 @@ public class BackupService {
 
 
     public void triggerIncrementalBackup() throws SQLException {
-        try{
+        try {
             ProcessBuilder builder = new ProcessBuilder(
                     "docker", "exec", "oracle-db", "bash", "-c",
                     "source /home/oracle/.bashrc && rman target / cmdfile=/home/oracle/incremental_backup.rman"
@@ -80,18 +79,17 @@ public class BackupService {
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
-            while((line = reader.readLine()) != null){
+            while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
 
             int exitCode = process.waitFor();
-            if(exitCode == 0){
+            if (exitCode == 0) {
                 System.out.println("Incremental backup completed successfully");
-            }
-            else{
+            } else {
                 System.out.println("Incremental backup failed");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             throw new SQLException("Error triggering incremental backup");
 
@@ -126,6 +124,5 @@ public class BackupService {
 
         return backupHistory;
     }
-
 
 }
