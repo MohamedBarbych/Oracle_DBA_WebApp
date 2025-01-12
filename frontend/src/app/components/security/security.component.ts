@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { SecurityService } from '../../services/security.service';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { CommonModule, NgIf, NgFor } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { Chart } from 'chart.js/auto';
 
 @Component({
   selector: 'app-security',
@@ -27,6 +27,58 @@ export class SecurityComponent {
 
 
 
+  initCharts() {
+    // Threats Detected Chart
+    new Chart('securityThreatsChart', {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [
+          {
+            label: 'Threats Detected',
+            data: [5, 8, 12, 7, 10],
+            borderColor: '#e32b2b',
+            backgroundColor: 'rgba(227, 43, 43, 0.1)',
+            fill: true,
+            tension: 0.4,
+          },
+        ],
+      },
+    });
+
+    // Encryption Coverage Chart
+    new Chart('dataEncryptionChart', {
+      type: 'doughnut',
+      data: {
+        labels: ['Encrypted', 'Not Encrypted'],
+        datasets: [
+          {
+            data: [80, 20],
+            backgroundColor: ['#e32b2b', '#cccccc'],
+          },
+        ],
+      },
+    });
+
+    // Audit Log Activity Chart
+    new Chart('auditActivityChart', {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [
+          {
+            label: 'Log Entries',
+            data: [100, 120, 150, 130, 160],
+            backgroundColor: '#e32b2b',
+          },
+        ],
+      },
+    });
+  }
+
+
+
+
   showAlert(message: string, type: string) {
     this.alertMessage = message;
     this.alertType = type;
@@ -38,7 +90,7 @@ export class SecurityComponent {
     }, 5000);
   }
 
- 
+
     configureTDE(): void {
       setTimeout(() => {
       const walletPassword = prompt('Enter Wallet Password:');
@@ -55,11 +107,11 @@ export class SecurityComponent {
           },
         });
       }
-    }, 2000);  
+    }, 2000);
     }
 
 
- 
+
     enableAudit(): void {
       setTimeout(() => {
       this.isLoading = true;
@@ -76,9 +128,9 @@ export class SecurityComponent {
     }, 2000);
     }
 
-  
-  
-  
+
+
+
     createVPDPolicy(): void {
       setTimeout(() => {
       this.isLoading = true;
@@ -95,10 +147,10 @@ export class SecurityComponent {
     }, 2000);
     }
 
- 
 
 
- 
+
+
     createVPDPolicyFunction(): void {
       setTimeout(() => {
       this.isLoading = true;
@@ -114,12 +166,13 @@ export class SecurityComponent {
       });
     }, 2000);
     }
- 
 
 
-  
+
+
   ngAfterViewInit(): void {
     // Initialize features after DOM is rendered
+        this.initCharts();
     this.initSpinner();
     this.initWOW();
     this.initFixedNavbar();

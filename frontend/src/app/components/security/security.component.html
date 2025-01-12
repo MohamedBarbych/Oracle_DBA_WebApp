@@ -5,6 +5,7 @@
   <div class="security-container">
     <h2 class="title">Security Configuration</h2>
 
+    <!-- Button Grid -->
     <div class="button-grid">
       <div class="button-square" (click)="configureTDE()">
         <img src="assets/img/tde.png" alt="TDE" class="button-image">
@@ -28,6 +29,25 @@
         <img src="assets/img/vdp-function.png" alt="VPD Policy Function" class="button-image">
         <i class="fas fa-cogs"></i>
         <p>Create VPD Function</p>
+      </div>
+    </div>
+
+    <!-- Security Statistics Section -->
+    <div class="stats-section">
+      <h3 class="stats-title">Security Overview</h3>
+      <div class="chart-grid">
+        <div class="chart-card">
+          <canvas id="securityThreatsChart"></canvas>
+          <p class="chart-description">Threats Detected (Monthly)</p>
+        </div>
+        <div class="chart-card">
+          <canvas id="dataEncryptionChart"></canvas>
+          <p class="chart-description">Encryption Coverage (%)</p>
+        </div>
+        <div class="chart-card">
+          <canvas id="auditActivityChart"></canvas>
+          <p class="chart-description">Audit Log Activity</p>
+        </div>
       </div>
     </div>
 

@@ -1,176 +1,56 @@
-
-
 /* General Styling */
 body {
-   margin-top: 150px;
+  margin-top: 150px;
   font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
+  background-color: #f7f7f7;
   color: #343a40;
 }
 
+/* Security Container Styling */
 .security-container {
-  padding: 50px;
-  max-width: 800px;
-  margin: 250px auto;
-  background: #ffffff;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-}
-
-.title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 30px;
-  color: #007bff;
-}
-
-.button-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-button {
-  padding: 15px 20px;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-button i {
-  font-size: 1.2rem;
-}
-
-.btn-primary {
-  background: #007bff;
-}
-
-.btn-primary:hover {
-  background: #0056b3;
-}
-
-.btn-info {
-  background: #17a2b8;
-}
-
-.btn-info:hover {
-  background: #117a8b;
-}
-
-.btn-warning {
-  background: #ffc107;
-  color: #212529;
-}
-
-.btn-warning:hover {
-  background: #e0a800;
-}
-
-.btn-success {
-  background: #28a745;
-}
-
-.btn-success:hover {
-  background: #1e7e34;
-}
-
-/* Alerts */
-.alert {
-  padding: 15px 20px;
-  border-radius: 10px;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-}
-
-.alert-success {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-}
-
-.alert-danger {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
-
-.alert i {
-  font-size: 1.5rem;
-}
-
-/* Spinner */
-.spinner-border {
-  width: 3rem;
-  height: 3rem;
-  margin: auto;
-  display: block;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .button-group {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  button {
-    width: 100%;
-  }
-}
-/* General Styling */
-
-
-.security-container {
-  padding: 50px;
+  padding: 40px;
   max-width: 1200px;
-  margin: 250px auto;
-  background: #ffffff;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin: 150px auto;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 40px;
   text-align: center;
-  color: #007bff;
+  color: #e32b2b; /* Oracle Red */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Button Grid Layout */
 .button-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 25px;
   justify-items: center;
 }
 
 /* Button Square Styling */
 .button-square {
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
 }
 
 .button-square:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
 }
 
 .button-square img {
@@ -179,12 +59,18 @@ button i {
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.button-square:hover img {
+  transform: scale(1.1);
 }
 
 .button-square i {
   font-size: 2.5rem;
-  color: #007bff;
+  color: #e32b2b;
   margin-bottom: 10px;
+  animation: pulse 1.2s infinite;
 }
 
 .button-square p {
@@ -194,7 +80,7 @@ button i {
   margin: 0;
 }
 
-/* Alerts */
+/* Alerts Styling */
 .alert {
   padding: 15px 20px;
   border-radius: 10px;
@@ -210,29 +96,57 @@ button i {
   background-color: #d4edda;
   color: #155724;
   border: 1px solid #c3e6cb;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .alert-danger {
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .alert i {
   font-size: 1.5rem;
 }
 
-/* Spinner */
+/* Spinner Styling */
 .spinner-border {
   width: 3rem;
   height: 3rem;
   margin: auto;
   display: block;
+  color: #e32b2b; /* Oracle Red Spinner */
+}
+
+/* Animation Effects */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 /* Responsive Styling */
 @media (max-width: 768px) {
   .button-square img {
     height: 120px;
+  }
+
+  .title {
+    font-size: 2rem;
   }
 }
