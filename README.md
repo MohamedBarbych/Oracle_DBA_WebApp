@@ -33,7 +33,7 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
 
 - 🏠 **Page d'accueil** : <a name="page-daccueil"></a>
 
-![image](https://github.com/user-attachments/assets/c00f8978-7e67-4252-8094-28148a236b32)
+![image](https://github.com/user-attachments/assets/8421bb19-3928-44b5-ac71-3670a6918224)
 
 - 🗓️ **Tableau de bord** : <a name="tableau-de-bord"></a>
   
@@ -45,11 +45,11 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
 
 - 📊 **Gestion des Performances** : <a name="gestion-des-performances"></a>
 
-![image](https://github.com/user-attachments/assets/fbf83d67-316c-4753-a230-440498c74db6)
+![WhatsApp Image 2025-01-12 at 6 03 35 PM](https://github.com/user-attachments/assets/c3a6be45-6370-41e5-b4f8-d49acd10cbd0)
 
 - 🔐 **Sécurité** : <a name="sécurité"></a>
 
-![image](https://github.com/user-attachments/assets/e76e4851-1476-4dae-b190-e26ea92f5886)
+![image](https://github.com/user-attachments/assets/3dafc8ec-e43e-4261-93b9-1c500e1946b3)
 
 - 📂 **Gestion des Sauvegardes** : <a name="gestion-des-sauvegardes"></a>
 
