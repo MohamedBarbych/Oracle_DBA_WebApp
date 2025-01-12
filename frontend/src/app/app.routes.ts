@@ -23,6 +23,7 @@ import { ASHReportComponent } from './components/ash-report/ash-report.component
 import { AwrReportComponent } from './components/awr-report/awr-report.component';
 import { SecurityComponent } from './components/security/security.component';
 import { ParticulesComponent } from './components/shared/particules/particules.component';
+import { UserDashComponent } from './components/user-dash/user-dash.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -59,7 +60,7 @@ export const routes: Routes = [
   { path:'Awr-report',component: AwrReportComponent },
   { path:'Security',component: SecurityComponent },
 
-  // { path:'/particules',component: ParticulesComponent }
+  { path:'user-dash',component: UserDashComponent }
 ];
 
 

@@ -1,0 +1,88 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.container-fluid {
+  padding: 2rem 1rem;
+}
+
+.card {
+  border-radius: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-header {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+.text-secondary {
+  font-size: 1.25rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.text-center h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.shadow-sm {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.container-fluid {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.card {
+  border-radius: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-header {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+.text-secondary {
+  font-size: 1.25rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.text-center h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.shadow-sm {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}

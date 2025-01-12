@@ -1,0 +1,72 @@
+<div class="container-fluid py-5 bg-light">
+  <div class="text-center mb-4">
+    <h1 class="display-4 fw-bold text-primary">👨‍💼 InvestBuddy Dashboard</h1>
+    <p class="lead text-secondary">Track, analyze, and improve your investment decisions</p>
+  </div>
+
+  <!-- Stat Cards Section -->
+  <div class="row mb-5 text-center">
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h5>Total Investments</h5>
+          <h3 class="text-primary">$25,000</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h5>Annual Return Rate</h5>
+          <h3 class="text-success">8.5%</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <h5>Risk Index</h5>
+          <h3 class="text-danger">Moderate</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line Chart (Revenue Growth) -->
+  <div class="row gy-4">
+    <div class="col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">Revenue Growth</h5>
+        </div>
+        <div class="card-body">
+          <canvas #revenueLineChart></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doughnut Chart (Portfolio Distribution) -->
+    <div class="col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-warning text-white">
+          <h5 class="mb-0">Portfolio Distribution</h5>
+        </div>
+        <div class="card-body">
+          <canvas #portfolioDoughnutChart></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bar Chart (Quarterly Performance) -->
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+          <h5 class="mb-0">Quarterly Performance</h5>
+        </div>
+        <div class="card-body">
+          <canvas #performanceBarChart></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
