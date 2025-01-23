@@ -68,7 +68,7 @@ Une application puissante pour l'administration Oracle, conçue pour optimiser l
 
 
 ## 🏗️ Architecture du Projet <a name="architecture-du-projet"></a>
-![workflow_oracle](https://github.com/user-attachments/assets/8525f4e2-9645-41a1-ba4d-82fcb2a2cf97)
+![image](https://github.com/user-attachments/assets/e0583519-dc1f-46c5-823a-072a94ce069f)
 
 
 ## 🛠️ **Technologies Utilisées** <a name="technologies-utilisées"></a>
